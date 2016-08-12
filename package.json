@@ -1,0 +1,30 @@
+{
+  "name": "reactjs",
+  "version": "1.0.0",
+  "description": "This is react application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sintu-patel/reactjs.git"
+  },
+  "author": "Sintu Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sintu-patel/reactjs/issues"
+  },
+  "homepage": "https://github.com/sintu-patel/reactjs#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bower": "^1.7.9",
+    "cookie-parser": "^1.4.3",
+    "gulp": "^3.9.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "lodash": "^4.15.0",
+    "react": "^15.3.0"
+  }
+}
