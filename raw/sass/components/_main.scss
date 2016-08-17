@@ -1,0 +1,57 @@
+.site-nav {
+	background: $color-chocolate;
+	min-height: 700px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	ul {
+		padding-left: 30px;
+
+		li {
+			margin-top: 20px;
+			padding-left: 30px;
+			position: relative;
+
+			&:before {
+					background: $color-white;
+					box-shadow: 2px 2px 2px $color-black;
+					content: "";
+					height: 30px;
+					left: -20px;
+					position: absolute;
+					top: 0;
+					width: 30px;
+			}
+
+			&:nth-child(odd) {
+				&:before {
+					background: $color-brown;
+				}
+			}
+
+			a {
+				color: $color-white;
+				font-family: $font-open-sans;
+				font-size: 16px;
+				font-weight: bold;
+				line-height: 2;
+				text-shadow: 1px 1px 1px $color-black;
+			}
+		}
+	}
+}
+
+.splash {
+	font-size: 100px;
+}
+
+.site-footer {
+	background: $color-gray-333;
+	padding: 20px 0;
+	text-align: center;
+
+	small {
+		color: $color-white;
+		font-size: 20px;
+	}
+}
