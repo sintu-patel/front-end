@@ -12,13 +12,13 @@ gulp.task('compileReactSASS', function() {
 		.pipe(gulp.dest('reactjs/assets/css/'));
 });
 
-gulp.task('compileGameSASS', function() {
-	gulp.src('game/sass/app.scss')
+gulp.task('compileRawSASS', function() {
+	gulp.src('raw/sass/app.scss')
 		.pipe(compass({
-			css: 'game/assets/css/',
-			sass: 'game/sass/'
+			css: 'raw/assets/css/',
+			sass: 'raw/sass/'
 		}))
-		.pipe(gulp.dest('game/assets/css/'));
+		.pipe(gulp.dest('raw/assets/css/'));
 });
 
 gulp.task('compileAngularSASS', function() {
@@ -31,7 +31,7 @@ gulp.task('compileAngularSASS', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(['reactjs/**/*', 'game/**/*', 'angularjs/**/*'], ['compileReactSASS', 'compileGameSASS', 'compileAngularSASS']);
+	gulp.watch(['reactjs/**/*', 'raw/**/*', 'angularjs/**/*'], ['compileReactSASS', 'compileRawSASS', 'compileAngularSASS']);
 });
 
-gulp.task('default', ['compileReactSASS', 'compileGameSASS', 'compileAngularSASS']);
+gulp.task('default', ['compileReactSASS', 'compileRawSASS', 'compileAngularSASS']);
