@@ -1,5 +1,5 @@
 .site-nav {
-	background: $color-chocolate;
+	border-right: 1px solid $color-gray;
 	min-height: 700px;
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -25,33 +25,35 @@
 
 			&:nth-child(odd) {
 				&:before {
-					background: $color-brown;
+					background: $color-gray;
 				}
 			}
 
 			a {
-				color: $color-white;
+				color: $color-black;
 				font-family: $font-open-sans;
 				font-size: 16px;
 				font-weight: bold;
 				line-height: 2;
-				text-shadow: 1px 1px 1px $color-black;
 			}
 		}
 	}
 }
 
 .splash {
+	color: $color-white;
 	font-size: 100px;
+	text-transform: lowercase;
+	text-shadow: 2px 0 2px $color-black;
 }
 
 .site-footer {
-	background: $color-gray-333;
+	background: $color-gray;
 	padding: 20px 0;
 	text-align: center;
 
 	small {
-		color: $color-white;
+		color: $color-black;
 		font-size: 20px;
 	}
 }
