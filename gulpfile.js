@@ -31,7 +31,7 @@ gulp.task('compileAngularSASS', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch(['reactjs/**/*', 'raw/**/*', 'angularjs/**/*'], ['compileReactSASS', 'compileRawSASS', 'compileAngularSASS']);
+	gulp.watch(['raw/**/*'], ['compileRawSASS']);
 });
 
 gulp.task('default', ['compileReactSASS', 'compileRawSASS', 'compileAngularSASS']);

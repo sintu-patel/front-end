@@ -1,6 +1,18 @@
+.logo-icon {
+		background: $color-white;
+		box-shadow: 2px 2px 2px $color-black;
+		border-radius: 80px;
+		height: 80px;
+		left: 30px;
+		position: absolute;
+		top: 30px;
+		width: 80px;
+}
+
 .site-logo {
 	color: $color-white;
 	font-size: 100px;
+	text-transform: lowercase;
 	text-shadow: 2px 0 2px $color-black;
 
 	&:hover,
@@ -21,7 +33,10 @@
 }
 
 .site-header {
-	background: $color-red;
+	background: $color-darkorange;
 	margin-top: -20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	position: relative;
 	text-align: center;
 }
