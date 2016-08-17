@@ -1,3 +1,33 @@
-.main-content {
-	padding-top: 20px;
+.site-nav {
+	background: $color-gray-333;
+	min-height: 500px;
+	padding: 20px 0;
+
+	ul {
+		list-style: decimal-leading-zero;
+
+		li {
+			list-style: decimal-leading-zero;
+
+			a {
+				color: $color-white;
+				font-size: 60px;
+			}
+		}
+	}
+}
+
+.splash {
+	font-size: 100px;
+}
+
+.site-footer {
+	background: $color-black;
+	padding: 20px 0;
+	text-align: center;
+
+	small {
+		color: $color-white;
+		font-size: 20px;
+	}
 }
