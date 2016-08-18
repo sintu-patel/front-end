@@ -1,43 +1,45 @@
-.logo-icon {
-		background: $color-white;
-		box-shadow: 2px 2px 2px $color-black;
-		border-radius: 80px;
-		height: 80px;
-		left: 30px;
-		position: absolute;
-		top: 30px;
-		width: 80px;
-}
+.main-app {
+	.logo-icon {
+			background: $color-white;
+			box-shadow: 2px 2px 2px $color-black;
+			border-radius: 80px;
+			height: 80px;
+			left: 30px;
+			position: absolute;
+			top: 30px;
+			width: 80px;
+	}
 
-.site-logo {
-	color: $color-white;
-	font-size: 100px;
-	text-transform: lowercase;
-	text-shadow: 2px 0 2px $color-black;
-
-	&:hover,
-	&:focus {
+	.site-logo {
 		color: $color-white;
-		text-decoration: none;
+		font-size: 100px;
+		text-transform: lowercase;
+		text-shadow: 2px 0 2px $color-black;
+
+		&:hover,
+		&:focus {
+			color: $color-white;
+			text-decoration: none;
+		}
+
+		.logo-dot {
+			display: inline-block;
+			margin-left: -25px;
+		}
+
+		.logo-in {
+			display: inline-block;
+			margin-left: -30px;
+		}
 	}
 
-	.logo-dot {
-		display: inline-block;
-		margin-left: -25px;
+	.site-header {
+		background: $color-cornflowerblue;
+		box-shadow:  1px 1px 1px $color-gray;
+		margin-top: -20px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		position: relative;
+		text-align: center;
 	}
-
-	.logo-in {
-		display: inline-block;
-		margin-left: -30px;
-	}
-}
-
-.site-header {
-	background: $color-cornflowerblue;
-	box-shadow:  1px 1px 1px $color-gray;
-	margin-top: -20px;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	position: relative;
-	text-align: center;
 }
