@@ -1,60 +1,62 @@
-.site-nav {
-	box-shadow: 1px 0 1px $color-gray;
-	min-height: 700px;
-	padding-top: 20px;
-	padding-bottom: 20px;
+.main-app {
+	.site-nav {
+		box-shadow: 1px 0 1px $color-gray;
+		min-height: 700px;
+		padding-top: 20px;
+		padding-bottom: 20px;
 
-	ul {
-		padding-left: 30px;
-
-		li {
-			margin-top: 20px;
+		ul {
 			padding-left: 30px;
-			position: relative;
 
-			&:before {
-					background: $color-white;
-					box-shadow: 2px 2px 2px $color-black;
-					content: "";
-					height: 15px;
-					left: 0;
-					position: absolute;
-					top: 0;
-					width: 15px;
-			}
+			li {
+				margin-top: 20px;
+				padding-left: 30px;
+				position: relative;
 
-			&:nth-child(odd) {
 				&:before {
-					background: $color-gray;
+						background: $color-white;
+						box-shadow: 2px 2px 2px $color-black;
+						content: "";
+						height: 15px;
+						left: 0;
+						position: absolute;
+						top: 0;
+						width: 15px;
 				}
-			}
 
-			a {
-				color: $color-gray-333;
-				font-family: $font-open-sans;
-				font-size: 12px;
-				font-weight: bold;
-				line-height: 1.2;
+				&:nth-child(odd) {
+					&:before {
+						background: $color-gray;
+					}
+				}
+
+				a {
+					color: $color-gray-333;
+					font-family: $font-open-sans;
+					font-size: 12px;
+					font-weight: bold;
+					line-height: 1.2;
+				}
 			}
 		}
 	}
-}
 
-.splash {
-	color: $color-white;
-	font-size: 100px;
-	text-transform: lowercase;
-	text-shadow: 2px 0 2px $color-black;
-}
+	.splash {
+		color: $color-white;
+		font-size: 100px;
+		text-transform: lowercase;
+		text-shadow: 2px 0 2px $color-black;
+	}
 
-.site-footer {
-	background: $color-white;
-	padding: 20px 0;
-	text-align: center;
-	box-shadow: 0 -1px 1px $color-gray;
+	.site-footer {
+		background: $color-white;
+		padding: 20px 0;
+		text-align: center;
+		box-shadow: 0 -1px 1px $color-gray;
 
-	small {
-		color: $color-gray;
-		font-size: 12px;
+		small {
+			color: $color-gray;
+			font-size: 12px;
+		}
 	}
 }
