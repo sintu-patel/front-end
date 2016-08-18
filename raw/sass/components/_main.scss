@@ -1,5 +1,5 @@
 .site-nav {
-	border-right: 1px solid $color-gray;
+	box-shadow: 1px 0 1px $color-gray;
 	min-height: 700px;
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -16,11 +16,11 @@
 					background: $color-white;
 					box-shadow: 2px 2px 2px $color-black;
 					content: "";
-					height: 30px;
-					left: -20px;
+					height: 15px;
+					left: 0;
 					position: absolute;
 					top: 0;
-					width: 30px;
+					width: 15px;
 			}
 
 			&:nth-child(odd) {
@@ -30,11 +30,11 @@
 			}
 
 			a {
-				color: $color-black;
+				color: $color-gray-333;
 				font-family: $font-open-sans;
-				font-size: 16px;
+				font-size: 12px;
 				font-weight: bold;
-				line-height: 2;
+				line-height: 1.2;
 			}
 		}
 	}
@@ -48,12 +48,13 @@
 }
 
 .site-footer {
-	background: $color-gray;
+	background: $color-white;
 	padding: 20px 0;
 	text-align: center;
+	box-shadow: 0 -1px 1px $color-gray;
 
 	small {
-		color: $color-black;
-		font-size: 20px;
+		color: $color-gray;
+		font-size: 12px;
 	}
 }
