@@ -1,11 +1,66 @@
 .flexbox {
   background: $color-cornflowerblue;
+  .container-label {
+    background: $color-aliceblue;
+    color: $color-gray-333;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 20px;
+  }
 
   .flex-container {
     display: flex;
 
+    &.one {
+      flex-direction: row;
+    }
+
+    &.two {
+      flex-direction: row-reverse;
+    }
+
+    &.three {
+      flex-direction: column;
+    }
+
+    &.four {
+      flex-direction: column-reverse;
+    }
+
     .flex-item {
       padding: 10px;
+
+      &:nth-child(1) {
+        background: $color-dark-darkmagenta;
+
+        .no-label {
+          color: $color-dark-darkmagenta;
+        }
+      }
+
+      &:nth-child(2) {
+        background: $color-chocolate;
+
+        .no-label {
+          color: $color-chocolate;
+        }
+      }
+
+      &:nth-child(3) {
+        background: $color-dark-green;
+
+        .no-label {
+          color: $color-dark-green;
+        }
+      }
+
+      &:nth-child(4) {
+        background: $color-dark-blue;
+
+        .no-label {
+          color: $color-dark-blue;
+        }
+      }
     }
   }
 
@@ -13,5 +68,14 @@
     color: $color-white;
     font-size: 14px;
     line-height: 1.5;
+    margin-top: 20px;
+  }
+
+  .no-label {
+    background: $color-white;
+    color: $color-gray-333;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
   }
 }
