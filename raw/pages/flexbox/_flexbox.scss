@@ -1,5 +1,12 @@
 .flexbox {
   background: $color-cornflowerblue;
+  .container-label {
+    background: $color-aliceblue;
+    color: $color-gray-333;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 20px;
+  }
 
   .flex-container {
     display: flex;
