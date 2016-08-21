@@ -1,7 +1,7 @@
 .main-app {
 	.logo-icon {
-			background: $color-white;
-			box-shadow: 2px 2px 2px $color-black;
+			background: $color-gray-eee;
+			box-shadow: 20px 20px 2px $color-forestgreen;
 			border-radius: 80px;
 			height: 80px;
 			left: 30px;
@@ -11,7 +11,7 @@
 	}
 
 	.site-logo {
-		color: $color-white;
+		color: $color-gray-eee;
 		font-size: 100px;
 		text-transform: lowercase;
 		text-shadow: 2px 0 2px $color-black;
