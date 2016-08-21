@@ -1,9 +1,9 @@
 .main-app {
 	.logo-icon {
+			@include box-shadow();
 			background: $color-gray-eee;
-			box-shadow: 0 0 10px $color-cyan,
-									0 0 10px blue inset;
 			border-radius: 80px;
+			cursor: pointer;
 			height: 80px;
 			left: 30px;
 			position: absolute;
