@@ -1,14 +1,8 @@
 .main-app {
 	.logo-icon {
 			background: $color-gray-eee;
-			box-shadow: 5px 5px 0 $color-red,
-									10px 10px 0 $color-brown,
-									15px 15px 0 $color-darkorange,
-									20px 20px 0 $color-chocolate,
-									5px 5px 0 $color-red inset,
-									10px 10px 0 $color-brown inset,
-									15px 15px 0 $color-darkorange inset,
-									20px 20px 0 $color-chocolate inset;
+			box-shadow: 0 0 10px $color-cyan,
+									0 0 10px blue inset;
 			border-radius: 80px;
 			height: 80px;
 			left: 30px;
