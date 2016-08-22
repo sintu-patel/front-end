@@ -51,13 +51,13 @@
 				}
 
 				&:before {
-						background: $color-gray-eee;
-						box-shadow: 2px 2px 2px $color-black;
+						background: transparent;
+						box-shadow: 0 0 1px $color-white;
 						content: "";
 						height: 15px;
-						left: 2px;
+						left: 10px;
 						position: absolute;
-						top: 2px;
+						top: 10px;
 						width: 15px;
 				}
 
