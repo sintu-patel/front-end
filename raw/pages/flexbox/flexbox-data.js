@@ -7,6 +7,6 @@ var pageData = {
           devices. For many applications, the flexible box model provides\
           an improvement over the block model in that it does not use\
           floats, nor do the flex container's margins collapse with\
-          the margins of its contents.sintu"
+          the margins of its contents."
   }
 }
