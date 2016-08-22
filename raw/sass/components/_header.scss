@@ -1,17 +1,21 @@
 .main-app {
 	.logo-icon {
-			background: $color-white;
-			box-shadow: 2px 2px 2px $color-black;
+			@include box-shadow();
 			border-radius: 80px;
+			cursor: pointer;
+			color: $color-white;
+			font-size: 50px;
 			height: 80px;
 			left: 30px;
 			position: absolute;
+			padding-top: 15px;
 			top: 30px;
+			text-shadow: 0 0 2px $color-black;
 			width: 80px;
 	}
 
 	.site-logo {
-		color: $color-white;
+		color: $color-gray-eee;
 		font-size: 100px;
 		text-transform: lowercase;
 		text-shadow: 2px 0 2px $color-black;
