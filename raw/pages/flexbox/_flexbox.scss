@@ -3,8 +3,9 @@
   .container-label {
     background: $color-aliceblue;
     color: $color-gray-333;
-    font-size: 50px;
+    font-size: 20px;
     font-weight: bold;
+    line-height: 1.2;
     padding: 20px;
   }
 
@@ -25,6 +26,19 @@
 
     &.four {
       flex-direction: column-reverse;
+    }
+
+    &.five {
+      flex-wrap: nowrap;
+    }
+
+    &.six {
+      flex-wrap: wrap;
+    }
+
+    &.seven {
+      flex-flow: wrap-reverse;
+      justify-content: flex-end;
     }
 
     .flex-item {
@@ -61,6 +75,23 @@
           color: $color-dark-blue;
         }
       }
+
+      &:nth-child(5) {
+        background: $color-green;
+
+        .no-label {
+          color: $color-green;
+        }
+      }
+
+      &:nth-child(6) {
+        background: $color-crimson;
+
+        .no-label {
+          color: $color-crimson;
+        }
+      }
+
     }
   }
 

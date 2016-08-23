@@ -15,12 +15,20 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="container-label">
+						display: flex; <br />
 						flex-direction: row;
 					</div>
 					<div class="flex-container one">
 						<div class="flex-item">
 							<div class="no-label">11</div>
-							<p class="paragraph">{paragraph}</p>
+							<p>
+								order: integer;
+								flex-grow: number;
+								flex-shrink: number;
+								flex-basis: length | auto;
+								lex: none | [ 'flex-grow' 'flex-shrink'? || 'flex-basis' ]
+								align-self: auto | flex-start | flex-end | center | baseline | stretch;
+							</p>
 						</div>
 						<div class="flex-item">
 							<div class="no-label">12</div>
@@ -41,6 +49,7 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="container-label">
+						display: flex; <br />
 						flex-direction: row-reverse;
 					</div>
 					<div class="flex-container two">
@@ -67,6 +76,7 @@
 			<div class="row">
 					<div class="col-xs-12">
 						<div class="container-label">
+							display: flex; <br />
 							flex-direction: column;
 						</div>
 						<div class="flex-container three">
@@ -93,6 +103,7 @@
 					<div class="row">
 						<div class="col-xs-12">
 							<div class="container-label">
+								display: flex; <br />
 								flex-direction: column-reverse;
 							</div>
 							<div class="flex-container four">
@@ -110,6 +121,116 @@
 								</div>
 								<div class="flex-item">
 									<div class="no-label">24</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="container-label">
+								display: flex; <br />
+								flex-wrap: nowrap
+							</div>
+							<div class="flex-container five">
+								<div class="flex-item">
+									<div class="no-label">21</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">22</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">23</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">24</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">25</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">26</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="container-label">
+								display: flex; <br />
+								flex-wrap: wrap
+							</div>
+							<div class="flex-container six">
+								<div class="flex-item">
+									<div class="no-label">21</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">22</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">23</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">24</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">25</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">26</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="container-label">
+								display: flex; <br />
+								flex-wrap: wrap-reverse
+								flex-flow: ‘flex-direction’ || ‘flex-wrap’
+								flex-flow: row || wrap
+								justify-content: flex-start | flex-end | center | space-between | space-around;
+								align-items: flex-start | flex-end | center | baseline | stretch;
+								align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+							</div>
+							<div class="flex-container seven">
+								<div class="flex-item">
+									<div class="no-label">21</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">22</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">23</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">24</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">25</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">26</div>
 									<p class="paragraph">{paragraph}</p>
 								</div>
 							</div>
