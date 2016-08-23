@@ -1,6 +1,10 @@
-var pageData = {
-  "main":{
-    "paragraph": "The CSS3 Flexible Box, or flexbox, is a layout mode\
-          providing for the arrangement of elements on a page."
-  }
-}
+$(document).ready(function(){
+  mountData('paragraph');
+});
+
+// Change content of an element with respective to class in data
+var mountData = function(cssClass) {
+  var text = pageData.main[cssClass];
+  var $page = $('.page');
+  $page.find('.' + cssClass).html(text);
+};
