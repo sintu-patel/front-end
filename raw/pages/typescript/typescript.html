@@ -1,0 +1,243 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Flexbox</title>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../assets/css/app.css" />
+		<script src="typescript-data.js" type="text/javascript" ></script>
+		<script src="../../../bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="typescript.js" type="text/javascript" ></script>
+</head>
+  <body class="flexbox page">
+		<div class="container" data-ng-app="app">
+
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="container-label">
+						display: flex; <br />
+						flex-direction: row;
+					</div>
+					<div class="flex-container one">
+						<div class="flex-item">
+							<div class="no-label">11</div>
+							<p>
+								order: integer;
+								flex-grow: number;
+								flex-shrink: number;
+								flex-basis: length | auto;
+								lex: none | [ 'flex-grow' 'flex-shrink'? || 'flex-basis' ]
+								align-self: auto | flex-start | flex-end | center | baseline | stretch;
+							</p>
+						</div>
+						<div class="flex-item">
+							<div class="no-label">12</div>
+							<p class="paragraph">{paragraph}</p>
+						</div>
+						<div class="flex-item">
+							<div class="no-label">13</div>
+							<p class="paragraph">{paragraph}</p>
+						</div>
+						<div class="flex-item">
+							<div class="no-label">14</div>
+							<p class="paragraph">{paragraph}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="container-label">
+						display: flex; <br />
+						flex-direction: row-reverse;
+					</div>
+					<div class="flex-container two">
+						<div class="flex-item">
+							<div class="no-label">21</div>
+							<p class="paragraph">{paragraph}</p>
+						</div>
+						<div class="flex-item">
+							<div class="no-label">22</div>
+							<p class="paragraph">{paragraph}</p>
+						</div>
+						<div class="flex-item">
+							<div class="no-label">23</div>
+							<p class="paragraph">{paragraph}</p>
+						</div>
+						<div class="flex-item">
+							<div class="no-label">24</div>
+							<p class="paragraph">{paragraph}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+					<div class="col-xs-12">
+						<div class="container-label">
+							display: flex; <br />
+							flex-direction: column;
+						</div>
+						<div class="flex-container three">
+							<div class="flex-item">
+								<div class="no-label">21</div>
+								<p class="paragraph">{paragraph}</p>
+							</div>
+							<div class="flex-item">
+								<div class="no-label">22</div>
+								<p class="paragraph">{paragraph}</p>
+							</div>
+							<div class="flex-item">
+								<div class="no-label">23</div>
+								<p class="paragraph">{paragraph}</p>
+							</div>
+							<div class="flex-item">
+								<div class="no-label">24</div>
+								<p class="paragraph">{paragraph}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="container-label">
+								display: flex; <br />
+								flex-direction: column-reverse;
+							</div>
+							<div class="flex-container four">
+								<div class="flex-item">
+									<div class="no-label">21</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">22</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">23</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">24</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="container-label">
+								display: flex; <br />
+								flex-wrap: nowrap
+							</div>
+							<div class="flex-container five">
+								<div class="flex-item">
+									<div class="no-label">21</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">22</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">23</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">24</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">25</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">26</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="container-label">
+								display: flex; <br />
+								flex-wrap: wrap
+							</div>
+							<div class="flex-container six">
+								<div class="flex-item">
+									<div class="no-label">21</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">22</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">23</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">24</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">25</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">26</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="container-label">
+								display: flex; <br />
+								flex-wrap: wrap-reverse
+								flex-flow: ‘flex-direction’ || ‘flex-wrap’
+								flex-flow: row || wrap
+								justify-content: flex-start | flex-end | center | space-between | space-around;
+								align-items: flex-start | flex-end | center | baseline | stretch;
+								align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+							</div>
+							<div class="flex-container seven">
+								<div class="flex-item">
+									<div class="no-label">21</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">22</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">23</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">24</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">25</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+								<div class="flex-item">
+									<div class="no-label">26</div>
+									<p class="paragraph">{paragraph}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+			</div>
+		</div>
+  </body>
+</html>

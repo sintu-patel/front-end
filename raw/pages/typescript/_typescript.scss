@@ -1,0 +1,112 @@
+.flexbox {
+  background: $color-cornflowerblue;
+  .container-label {
+    background: $color-aliceblue;
+    color: $color-gray-333;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+    padding: 20px;
+  }
+
+  .flex-container {
+    display: flex;
+
+    &.one {
+      flex-direction: row;
+    }
+
+    &.two {
+      flex-direction: row-reverse;
+    }
+
+    &.three {
+      flex-direction: column;
+    }
+
+    &.four {
+      flex-direction: column-reverse;
+    }
+
+    &.five {
+      flex-wrap: nowrap;
+    }
+
+    &.six {
+      flex-wrap: wrap;
+    }
+
+    &.seven {
+      flex-flow: wrap-reverse;
+      justify-content: flex-end;
+    }
+
+    .flex-item {
+      padding: 10px;
+
+      &:nth-child(1) {
+        background: $color-dark-darkmagenta;
+
+        .no-label {
+          color: $color-dark-darkmagenta;
+        }
+      }
+
+      &:nth-child(2) {
+        background: $color-chocolate;
+
+        .no-label {
+          color: $color-chocolate;
+        }
+      }
+
+      &:nth-child(3) {
+        background: $color-dark-green;
+
+        .no-label {
+          color: $color-dark-green;
+        }
+      }
+
+      &:nth-child(4) {
+        background: $color-dark-blue;
+
+        .no-label {
+          color: $color-dark-blue;
+        }
+      }
+
+      &:nth-child(5) {
+        background: $color-green;
+
+        .no-label {
+          color: $color-green;
+        }
+      }
+
+      &:nth-child(6) {
+        background: $color-crimson;
+
+        .no-label {
+          color: $color-crimson;
+        }
+      }
+
+    }
+  }
+
+  p {
+    color: $color-white;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 20px;
+  }
+
+  .no-label {
+    background: $color-white;
+    color: $color-gray-333;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+  }
+}
