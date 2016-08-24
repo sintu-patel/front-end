@@ -1,5 +1,5 @@
-var myName = "Andrew";
+var myName = "<span>Sintu Singh Patel</span>";
 function printName(name) {
-    document.body.innerHTML = 'Sintu';
+    document.getElementById('heading').innerHTML = name;
 }
-printName();
+printName(myName);
