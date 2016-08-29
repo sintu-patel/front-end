@@ -103,35 +103,24 @@
 	.dev-name {
 		display: inline-block;
 		color: $color-gray-333;
-		padding: 10px;
 		font-size: 50px;
-		margin: 10px 0;
+		font-family: arial;
+		font-weight: bold;
 	}
 
 	.dev-title {
 		color: $color-gray-333;
-		padding: 10px;
 		font-size: 50px;
-		margin: 10px 0;
-	}
-
-	.dev-age {
-		display: inline-block;
-		color: $color-gray-333;
-		padding: 10px;
-		font-size: 50px;
-		margin: 10px 0;
+		font-family: arial;
+		font-weight: bold;
 	}
 
 	.dev-skills {
 		span {
-			background: red;
 			display: inline-block;
-			color: $color-white;
-			padding: 10px;
-			font-size: 20px;
-			margin: 10px 0;
-			text-transform: uppercase;
+			color: $color-black;
+			font-size: 12px;
+			font-family: arial;
 		}
 	}
 }
