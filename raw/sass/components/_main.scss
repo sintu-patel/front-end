@@ -84,14 +84,43 @@
 	}
 
 	.site-footer {
-		background: $color-white;
-		padding: 20px 0;
+		background: $color-blue-primary;
+		padding: 32px 0;
 		text-align: center;
-		box-shadow: 0 -1px 1px $color-gray;
 
 		small {
 			color: $color-gray;
 			font-size: 12px;
 		}
 	}
+}
+
+.main-panel {
+	height: 500px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	.dev-name {
+		font-size: 50px;
+		margin: 10px 0;
+	}
+
+	.dev-title {
+		font-size: 40px;
+		margin: 10px 0;
+	}
+
+	.dev-age {
+		font-size: 30px;
+		margin: 10px 0;
+	}
+
+	.dev-skills {
+		font-size: 30px;
+		margin: 10px 0;
+	}
+}
+
+.page-shadow {
+	box-shadow: 0 0 100px $color-blue-primary inset;
 }
