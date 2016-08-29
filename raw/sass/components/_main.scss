@@ -1,7 +1,7 @@
 .main-app {
 	.site-nav {
 		box-shadow: 1px 0 1px $color-gray;
-		min-height: 700px;
+		min-height: 500px;
 		padding-top: 20px;
 		padding-bottom: 20px;
 
@@ -84,10 +84,9 @@
 	}
 
 	.site-footer {
-		background: $color-white;
-		padding: 20px 0;
+		background: $color-blue-primary;
+		padding: 32px 0;
 		text-align: center;
-		box-shadow: 0 -1px 1px $color-gray;
 
 		small {
 			color: $color-gray;
@@ -95,3 +94,34 @@
 		}
 	}
 }
+
+.main-panel {
+	height: 500px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	.dev-name {
+		display: inline-block;
+		color: $color-gray-333;
+		font-size: 50px;
+		font-family: arial;
+		font-weight: bold;
+	}
+
+	.dev-title {
+		color: $color-gray-333;
+		font-size: 50px;
+		font-family: arial;
+		font-weight: bold;
+	}
+
+	.dev-skills {
+		span {
+			display: inline-block;
+			color: $color-black;
+			font-size: 12px;
+			font-family: arial;
+		}
+	}
+}
+
