@@ -1,5 +1,5 @@
 .angularjs2 {
-	background: $color-gray;
+	background: $color-white;
 
 	.container {
 		background: $color-white;
@@ -7,26 +7,42 @@
 	}
 
 	.navigation {
-		box-shadow: -2px 2px 5px $color-black;
+		box-shadow: -2px 2px 5px #aaa;
+		height: 500px;
 		ul {
 			li {
+				box-shadow: 0 0 1px #ccc;
 				cursor: pointer;
-				font-size: 20px;
-				font-family: arial;
+				font-size: 14px;
+				font-family: $font-open-sans;
 				margin: 10px 0;
+				padding: 10px;
+				transition: 0.3s all;
+
+				&:hover {
+					background: #369;
+					color: $color-white;
+				}
 			}
 		}
 	}
 
 	h1 {
-		font-family: arial;
+		font-family: $font-open-sans;
 		font-size: 40px;
 		padding: 20px 0 40px 0;
 	}
 
 	h2 {
-		font-family: arial;
+		color: #369;
+		font-family: $font-open-sans;
 		font-size: 20px;
 		padding: 0 0 20px 0;
+	}
+
+	p {
+		font-family: $font-open-sans;
+		font-size: 14px;
+		line-height: 1.5;
 	}
 }
