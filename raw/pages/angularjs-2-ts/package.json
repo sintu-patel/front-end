@@ -1,5 +1,5 @@
 {
-  "name": "angular2-quickstart",
+  "name": "angular2",
   "version": "1.0.0",
   "scripts": {
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
@@ -7,9 +7,7 @@
     "postinstall": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "typings": "typings",
-    "build": "tsc -p tsconfig.json",
-    "build_prod": "npm run build && browserify -s main app/main.js > dist/bundle.js"
+    "typings": "typings"
   },
   "license": "ISC",
   "dependencies": {

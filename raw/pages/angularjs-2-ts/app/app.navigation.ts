@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from 'angular2/core';
+import {Observable, Subject} from 'rxjs/Rx';
 export class Navigation {
   id: number;
   title: string;
@@ -8,7 +9,7 @@ export class Navigation {
 const NAV_ITEMS: Navigation[] = [
   {
     id: 1,
-    name: 'Sr SC judge rips into CJI-headed collegium',
+    name: '1Sr SC judge rips into CJI-headed collegium',
     title: 'Sr SC judge rips into CJI-headed collegium',
     content: 'In a stunning revelation, the Supreme Court\'s fifth-most senior judge, Justice J Chelameswar, told The Times of India on Friday that he has stopped attending meetings of the collegium headed by the Chief Justice of India as he finds its procedure and process “most opaque“, and the "majority gangs up" to shoot down genuine objections against undesirable candidates being chosen to be judges of higher courts.<br /><br />India will be well represented at the event. Mamata Banerjee, along with a couple of her trusted aides, will be present to show her state\'s solidarity with the nun who began her ascent to saintliness on the streets of Kolkata, rescuing destitutes. And if Didi comes can CPM ­ which literally is losing ground to her after the Singur misadventure ­ be far behind in cashing just in on the gala event? <br /><br />India will be well represented at the event. Mamata Banerjee, along with a couple of her trusted aides, will be present to show her state\'s solidarity with the nun.'
   },
