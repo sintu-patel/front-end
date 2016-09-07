@@ -102,10 +102,11 @@
 
 	.dev-name {
 		display: inline-block;
-		color: $color-gray-333;
-		font-size: 50px;
+		color: $color-white;
+		font-size: 75px;
 		font-family: arial;
 		font-weight: bold;
+		margin-bottom: 30px;
 	}
 
 	.dev-title {
@@ -125,3 +126,16 @@
 	}
 }
 
+.main-content {
+	background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+}
+
+.main-panel .dev-skills span {
+    display: inline-block;
+    color: #fff;
+    font-size: 22px;
+    font-family: arial;
+    background:rgba(51,51,51,0.5);
+    padding: 26px;
+    margin-top: 20px;
+}
