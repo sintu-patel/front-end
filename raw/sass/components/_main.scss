@@ -88,9 +88,12 @@
 		padding: 32px 0;
 		text-align: center;
 
-		small {
-			color: $color-gray;
+		small,
+		a {
+			color: $color-cornflowerblue;
 			font-size: 12px;
+			text-transform: lowercase;
+			margin-left: 10px;
 		}
 	}
 }
