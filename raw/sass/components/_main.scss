@@ -116,6 +116,10 @@ body {
 		font-weight: bold;
 		margin-bottom: 30px;
 		text-shadow: 0 0 2px $color-black;
+
+		@media all and (max-width: 767px) {
+			font-size: 40px;
+		}
 	}
 
 	.dev-title {
