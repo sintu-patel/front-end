@@ -1,0 +1,64 @@
+.react-app {
+	background: $color-white;
+
+	.component-padding {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.content {
+		margin-top: 20px;
+
+		p {
+			cursor: pointer;
+			font-family: $font-open-sans;
+			font-size: 14px;
+			line-height: 2;
+			padding: 10px 0;
+		}
+	}
+
+	h1 {
+		font-family: $font-open-sans;
+	}
+
+	h2 {
+		font-size: 24px;
+		display: inline-block;
+		color:  $color-gray-333;
+		font-family: $font-open-sans;
+		border-bottom: 2px solid $color-gray-333;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+
+	.nav {
+		min-height: 400px;
+
+		ul {
+			margin-top: 20px;
+			li {
+				cursor: pointer;
+				font-family: $font-open-sans;
+				font-size: 14px;
+				line-height: 1.2;
+				padding: 10px 0;
+
+				&:hover,
+				&.current {
+					color: $color-navy;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	.content-panel {
+		min-height: 400px;
+	}
+
+	.footer {
+		text-align: center;
+	}
+
+}
