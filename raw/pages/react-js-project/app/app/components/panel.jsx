@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 
 class Panel extends React.Component {
   render () {
-    return (<div className="col-xs-9 content-panel component-padding" >
+    return (<div className="col-xs-9 col-md-8 col-md-offset-1 content-panel component-padding" >
     		<h2>Content</h2>
     			<div className="content">
 		    		<h3>{this.props.title}</h3>
