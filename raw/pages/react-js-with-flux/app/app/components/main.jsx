@@ -3,41 +3,29 @@ import {render} from 'react-dom';
 import Nav from './nav.jsx';
 import Panel from './panel.jsx';
 import {data} from './data.js';
-var TodoStore = require('../flux/stores/stores');
+var Store = require('../flux/stores/stores');
+var Actions = require('../flux/actions/actions');
 
-function getTodoState() {
-  return {
-    allTodos: TodoStore.getAll()
-  };
-}
 
 class Main extends React.Component {
 
 	componentWillMount() {
-		getTodoState();
-		console.log(this.state);
+		//Trigger Actions
+		var payloadData = {
+			pageNo: 0
+		};	
+		Actions.updateData(payloadData);
+		var storeData = Store.getData();
 		this.state = {
-			title: data[0].title,
-			content: data[0].content
+			title: storeData.title,
+			content: storeData.content
 		};
-	}
-
-	 componentDidMount() {
-	    TodoStore.addChangeListener(this._onChange);
-	  }
-
-	showContent(e) {
-		var target = e.target.getAttribute('data-key');
-		this.setState({
-			title: data[target].title,
-			content: data[target].content
-		})
 	}
 
 	render () {
 	    return (<div className="row main" >
 	    	<h1>{this.state.allTodos}</h1>
-	    		<Nav showContent={this.showContent.bind(this)} data={data} />
+	    		<Nav data={data} />
 
 	    		<Panel data={this.state.content} title={this.state.title} />
 	    	</div>);

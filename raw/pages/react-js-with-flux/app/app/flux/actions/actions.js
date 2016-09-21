@@ -1,20 +1,16 @@
-var Dispatcher = require('../dispatcher/dispatcher');
-var assign = require('object-assign');
+'use strict';
 
-var AppDispatcher = assign({}, Dispatcher.prototype, {
+var AppDispatcher = require('../dispatcher/app-dispatcher');
+import {data} from '../../components/data.js';
 
-  /**
-   * A bridge function between the views and the dispatcher, marking the action
-   * as a view action.  Another variant here could be handleServerAction.
-   * @param  {object} action The data coming from the view.
-   */
-  handleViewAction: function(action) {
-    this.dispatch({
-      source: 'VIEW_ACTION',
-      action: action
+var Actions = {
+
+  updateData: function(payload) {
+    AppDispatcher.handleAction({
+      actionType: 'GET_DATA',
+      data: data[payload.pageNo]
     });
   }
+};
 
-});
-
-module.exports = AppDispatcher;
+module.exports = Actions;
