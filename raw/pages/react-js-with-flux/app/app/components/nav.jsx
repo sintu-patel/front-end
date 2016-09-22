@@ -1,5 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
+var Store = require('../flux/stores/stores');
+var Actions = require('../flux/actions/actions');
 
 class Nav extends React.Component {
 
@@ -25,7 +27,10 @@ class Nav extends React.Component {
 		this.setState({
 			current: target
 		});
-		this.props.showContent(e);
+		var payloadData = {
+			pageNo: target
+		};	
+		Actions.updateData(payloadData);
 	}
 
 	render () {
