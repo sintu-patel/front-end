@@ -31,9 +31,6 @@
 		display: inline-block;
 		color:  $color-gray-333;
 		font-family: $font-open-sans;
-		border-bottom: 2px solid $color-gray-333;
-		text-transform: uppercase;
-		font-weight: bold;
 
 		@media all and (max-width: 767px) {
 			font-size: 14px;
@@ -76,4 +73,47 @@
 		}
 	}
 
+	&.react-app-flux {
+		background: $color-gray-333;
+
+		.container {
+			background: $color-white;
+			margin-top: 20px;
+		}
+
+		.header {
+			box-shadow: 0 0 2px $color-black;
+		}
+
+		.navigation {
+			background: #369;
+			color: $color-white;
+		}
+
+		h2 {
+			color: $color-white;
+		}
+
+		.nav {
+
+			ul {
+				li {
+					&:hover,
+					&.current {
+						color: $color-white;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+		.footer {
+			background: $color-gray-333;
+			color: $color-white;
+
+			a {
+				color: $color-white;
+			}
+		}
+	}
 }

@@ -5,11 +5,12 @@ import Panel from './panel.jsx';
 import {data} from './data.js';
 var Store = require('../flux/stores/stores');
 var Actions = require('../flux/actions/actions');
-
+var $this;
 
 class Main extends React.Component {
 
 	componentWillMount() {
+		$this = this;
 		//Trigger Actions
 		var payloadData = {
 			pageNo: 0
@@ -20,6 +21,16 @@ class Main extends React.Component {
 			title: storeData.title,
 			content: storeData.content
 		};
+
+		Store.addChangeListener(this.updateData);
+	}
+
+	updateData() {
+		var storeData = Store.getData();
+		$this.setState({
+			title: storeData.title,
+			content: storeData.content
+		});
 	}
 
 	render () {
@@ -29,11 +40,7 @@ class Main extends React.Component {
 
 	    		<Panel data={this.state.content} title={this.state.title} />
 	    	</div>);
-  }
-
-  _onChange() {
-    this.setState(getTodoState());
-  }
+  	}
 
 }
 

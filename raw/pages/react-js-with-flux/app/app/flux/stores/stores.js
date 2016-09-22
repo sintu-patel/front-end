@@ -6,7 +6,7 @@ var _ = require('underscore');
 
 var _appData = {};
 
-function loadProductData(data) {
+function loadAppData(data) {
   _appData = data
 }
 
@@ -30,7 +30,7 @@ AppDispatcher.register(function(payload) {
 
   switch(action.actionType) {
     case 'GET_DATA':
-      loadProductData(action.data);
+      loadAppData(action.data);
       break;
     default:
       return true;

@@ -28,7 +28,7 @@ class Nav extends React.Component {
 			current: target
 		});
 		var payloadData = {
-			pageNo: 1
+			pageNo: target
 		};	
 		Actions.updateData(payloadData);
 	}
