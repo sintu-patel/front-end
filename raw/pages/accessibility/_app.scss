@@ -1,0 +1,91 @@
+.accessible-navigation {
+  background: $color-white;
+  .article {
+	  table {
+	  	margin-top: 20px;
+
+	  	td, th {
+	  		padding: 20px;
+	  		border: 1px solid #ccc;
+	  	}
+
+	  	caption {
+	  		margin-bottom: 10px;
+	  		font-size: 18px;
+	  		color: rebeccapurple;
+	  		font-weight: bold;
+	  	}
+
+	  	thead {
+	  		th {
+	  			background: rebeccapurple;
+	  			color: #fff;
+	  		}
+	  	}
+	  }
+
+	  h1 {
+	    color: #fff;
+	    font-family: cursive;
+	    font-size: 250%;
+	    background: rebeccapurple;
+	    padding: 20px;
+	  }
+
+	  p {
+	  	line-height: 2;
+	  	margin-top: 10px;
+	  }
+
+	  h2 {
+	  	font-size: 20px;
+	  	background: #369;
+	  	color: #fff;
+	  	padding: 20px;
+	  	margin-top: 10px;
+	  }
+
+	  kbd {
+	  	background: none;
+	  	color: #333;
+	  	padding: 5px;
+	  }
+	}
+
+	.line-space {
+		margin-top: 30px;
+	}
+}
+
+.navigation {
+	h2 {
+		font-size: 0;
+	}
+
+	ul {
+		li {
+			display: inline-block;
+			position: relative;
+			padding: 10px 15px;
+
+			> ul {
+				display: none;
+				position: absolute;
+				left: 0;
+				top: 100%;
+
+				li {
+					display: block;
+				}
+			}
+
+			&:hover,
+			&:focus {
+
+				> ul {
+					display: block;
+				}
+			}
+		}
+	}
+}

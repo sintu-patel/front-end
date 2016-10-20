@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Accessible Navigation</title>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../../assets/css/app.css" />
+</head>
+  <body class="accessible-navigation page">
+		<div class="container" data-ng-app="app">
+			<div class="row">
+				<div class="col-xs-12">
+					<h1>Accessible Navigation</h1>
+				</div>
+			</div>	
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="line-space"></div>
+					<h2>Navigation without sub navigation</h2>
+					<div class="line-space"></div>
+					<nav role="navigation" class="navigation">
+						<h2>Main Menu: Top Label Menu</h2>
+						<ul>
+							<li>
+								<a href="#">Menu 1</a>
+							</li>
+
+							<li>
+								<a href="#">Menu 2</a>
+							</li>
+
+							<li>
+								<a href="#">Menu 3</a>
+							</li>
+
+							<li>
+								<a href="#">Menu 4</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<article class="col-xs-6 article">
+					<h1>Tips</h1>
+					<p>Take extra care while using ordred list or unordered list</p>
+					<h2>Identify the menu:</h2>
+					<p>Use role="navigation" or &lt;nav&gt; tag or both</p>
+					<h2>Labeling navigations:</h2>
+					<p>Using a (hidden) heading inside nav tag like &lt;h2&gt;Main menu&lt;/h2&gt;</p>
+					<p>Do not make hidden with display none or visibility hidden. Screen reader don't read hidden content. Hide with font size 0 or other techniques</p>
+					<h2>Labeling navigations:</h2>
+					<p>aria-label i.e aria-label="Main Menu"</p>
+					<p>&lt;nav role="navigation" aria-label="Main Menu"&gt;</p>
+					<h2>aria-labelledby</h2>
+					<p>&lt;nav role="navigation" aria-labelledby="mainmenulabel"&gt;</p>
+					<h2>Indicating the current page</h2>
+					<p>&lt;span class="visuallyhidden"&gt;Current Page: &lt;/span&gt;</p>
+					<h2>If menu has sub menu, then it should indicate the menu visually ie. arrow down icon</h2>
+					<p>Sub menu should close after one second</p>
+					<p>If menu has submenu use aria-haspopup="true"</p>
+					<p>Use aria-expanded</p>
+					<h2>Keyboard</h2>
+					<p>Use tab key for iterating top label menu</p>
+					<p>Use up and down array for iterating sub menu</p>
+					<div class="web-app-menu">
+						<h2>Web app Menu (Strictly Web app)</h2>
+						<p>role="menubar" : horizontal menu</p>
+						<p>role="menu": Represents a set of links or commands in a menu bar, it is used for the fly-out menus</p>
+						<p>role="menuitem": Represents an individual menu item.</p>
+					</div>
+					<p>Key mapping for top-level menu items</p>
+					<table>
+						<caption>Keys for top-level menu items</caption>
+						<thead>
+							<tr>
+								<th scope="col">Key</th>
+								<th scope="col">Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><kbd>tab</kbd></th>
+								<td rowspan="2">Select the next top-level menu item</td>
+							</tr>
+							<tr>
+								<th scope="row"><kbd>right arrow</kbd></th>
+							</tr>
+							<tr>
+								<th scope="row"><kbd>shift</kbd> + <kbd>tab</kbd></th>
+								<td rowspan="2">Select the previous top-level menu item</td>
+							</tr>
+							<tr>
+								<th scope="row"><kbd>left arrow</kbd></th>
+							</tr>
+							<tr>
+								<th scope="row"><kbd>return/enter</kbd></th>
+								<td rowspan="3">Open the submenu, select first submenu item.</td>
+							</tr>
+							<tr>
+								<th scope="row"><kbd>space</kbd></th>
+							</tr>
+							<tr>
+								<th scope="row"><kbd>down arrow</kbd></th>
+							</tr>
+							<tr>
+								<th scope="row"><kbd>up arrow</kbd></th>
+								<td>Open the submenu, select last submenu item.</td>
+							</tr>
+							<tr>
+								<th scope="row"><kbd>esc</kbd></th>
+								<td>Leave the menu</td>
+							</tr>
+						</tbody>
+					</table>
+					<table>
+						<caption>Keys for submenu items</caption>
+						<thead>
+							<tr>
+								<th scope="col">Key</th>
+								<th scope="col">Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row"><kbd>tab</kbd></th>
+								<td rowspan="2">Close the submenu, select the next top-level menu item</td>
+							</tr>
+							<tr>
+								<th scope="row"><kbd>right arrow</kbd></th>
+							</tr>
+							<tr>
+								<th scope="row"><kbd>shift</kbd> + <kbd>tab</kbd></th>
+								<td rowspan="2">Close the submenu, select the previous top-level menu item</td>
+							</tr>
+							<tr>
+								<th scope="row"><kbd>left arrow</kbd></th>
+							</tr>
+							<tr>
+								<th scope="row"><kbd>return/enter</kbd></th>
+								<td rowspan="2">Carry out function of this item. (In this example: bring up a dialog box with the text of the chosen menu item.)</td>
+							</tr>
+							<tr>
+								<th scope="row"><kbd>space</kbd></th>
+							</tr>
+							<tr>
+								<th scope="row"><kbd>down arrow</kbd></th>
+								<td>Select next submenu item</td>
+							</tr>
+							<tr>
+								<th scope="row"><kbd>up arrow</kbd></th>
+								<td>Select previous submenu item</td>
+							</tr>
+							<tr>
+								<th scope="row"><kbd>esc</kbd></th>
+								<td>Close the submenu, select the current top-level menu item</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</article>
+			</div>
+		</div>
+  </body>
+</html>
