@@ -81,9 +81,9 @@
 
 			&:hover,
 			&:focus {
-
-				> ul {
-					display: block;
+				a {
+					background: #369;
+	  				color: #fff;
 				}
 			}
 		}

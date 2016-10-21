@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Accessible Navigation</title>
+    <title>Accessible navigation</title>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="../../../assets/css/app.css" />
 </head>
@@ -18,23 +18,23 @@
 					<div class="line-space"></div>
 					<h2>Navigation without sub navigation</h2>
 					<div class="line-space"></div>
-					<nav role="navigation" class="navigation">
-						<h2>Main Menu: Top Label Menu</h2>
+					<nav id="top-level-menu" role="navigation" class="navigation">
+						<h2>This is top level menu.</h2>
 						<ul>
-							<li>
-								<a href="#">Menu 1</a>
+							<li tabindex="0">
+								<a tabindex="-1" href="http://www.google.com">Google</a>
 							</li>
 
-							<li>
-								<a href="#">Menu 2</a>
+							<li tabindex="0">
+								<a tabindex="-1" href="http://www.yahoo.com">Yahoo</a>
 							</li>
 
-							<li>
-								<a href="#">Menu 3</a>
+							<li tabindex="0">
+								<a tabindex="-1" href="http://www.sintupatel.in">Sintu Patel</a>
 							</li>
 
-							<li>
-								<a href="#">Menu 4</a>
+							<li tabindex="0">
+								<a tabindex="-1" href="http://timesofindia.com">Times of India</a>
 							</li>
 						</ul>
 					</nav>
@@ -159,5 +159,6 @@
 				</article>
 			</div>
 		</div>
+		<script type="text/javascript" src="accessible-navigation.js"></script>
   </body>
 </html>
