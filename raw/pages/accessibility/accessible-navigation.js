@@ -25,11 +25,13 @@ var followKey = function(e) {
 	}
 	// Right Arrrow on top level menu
 	if(keyCode === 39 && nextElement && !isSecondLevelMenu) {
+		e.preventDefault();
 		nextElement.focus();
 	}
 
 	// Left Arrow on top level menu
 	if(keyCode === 37 && prevElement && !isSecondLevelMenu) {
+		e.preventDefault();
 		prevElement.focus();
 	}
 
@@ -37,6 +39,7 @@ var followKey = function(e) {
 	if((keyCode === 13 || keyCode === 40 || keyCode === 32) && subMenu) {
 		e.preventDefault();
 		subMenu.style.display = 'block';
+		subMenu.setAttribute('aria-hidden', 'false');
 		var subMenuItems = subMenu.children;
 		subMenuItems[0].focus();
 	}
@@ -45,23 +48,30 @@ var followKey = function(e) {
 	if(keyCode === 38 && subMenu) {
 		e.preventDefault();
 		subMenu.style.display = 'block';
+		subMenu.setAttribute('aria-hidden', 'false');
 		var subMenuItems = subMenu.children;
 		subMenuItems[subMenuItems.length - 1].focus();
 	}
 
 	// Close Submenu
 	if(keyCode === 9 && isSecondLevelMenu) {
+		e.preventDefault();
+		e.path[1].setAttribute('aria-hidden', 'true');
 		e.path[1].style.display = 'none';
 	}
 
 	// Move to right top level
 	if(keyCode === 39 && isSecondLevelMenu && e.path[2].nextElementSibling) {
+		e.preventDefault();
+		e.path[1].setAttribute('aria-hidden', 'true');
 		e.path[1].style.display = 'none';
 		e.path[2].nextElementSibling.focus();
 	}
 
 	// Move to left top level
 	if(keyCode === 37 && isSecondLevelMenu && e.path[2].previousElementSibling) {
+		e.preventDefault();
+		e.path[1].setAttribute('aria-hidden', 'true');
 		e.path[1].style.display = 'none';
 		e.path[2].previousElementSibling.focus();
 	}
@@ -69,17 +79,28 @@ var followKey = function(e) {
 	// Move to left top level
 	if(keyCode === 9 && e.shiftKey && isSecondLevelMenu && e.path[2].previousElementSibling) {
 		e.preventDefault();
+		e.path[1].setAttribute('aria-hidden', 'true');
 		e.path[1].style.display = 'none';
 		e.path[2].previousElementSibling.focus();
 	}
 
+	// Move to left top level
+	if(keyCode === 9 && !e.shiftKey && isSecondLevelMenu && e.path[2].nextElementSibling) {
+		e.preventDefault();
+		e.path[1].setAttribute('aria-hidden', 'true');
+		e.path[1].style.display = 'none';
+		e.path[2].nextElementSibling.focus();
+	}
+
 	// Top Arrow
 	if(keyCode === 38 && isSecondLevelMenu && prevElement) {
+		e.preventDefault();
 		prevElement.focus();
 	}
 
 	// Down Arrow
 	if(keyCode === 40 && isSecondLevelMenu && nextElement) {
+		e.preventDefault();
 		nextElement.focus();
 	}
 
@@ -96,6 +117,8 @@ var followKey = function(e) {
 
 	// Down Arrow
 	if(keyCode === 27 && isSecondLevelMenu) {
+		e.preventDefault();
+		e.path[1].setAttribute('aria-hidden', 'true');
 		e.path[1].style.display = 'none';
 		e.path[2].focus();
 	}
