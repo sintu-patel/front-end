@@ -6,6 +6,13 @@ var followKey = function(e) {
 	var nextElement = e.target.nextElementSibling;
 	var elChildren = el.children;
 	var subMenu = elChildren[1];
+	var isTopLevelMenuItem = e;
+	var parentEl = e.path[1];
+	var parentLevel2 = e.path[2];
+	var parentLevel3 = e.path[3];
+	var parentLevel3Class = parentLevel3.getAttribute('class');
+	var classMatch = new RegExp('first-level-menu');
+	var isSecondLevelMenu = classMatch.test(parentLevel3Class);
 
 	// Follow link
 	if(tagName !== 'a' && keyCode === 13) {
@@ -17,12 +24,12 @@ var followKey = function(e) {
 		}
 	}
 	// Right Arrrow on top level menu
-	if(keyCode === 39 && nextElement) {
+	if(keyCode === 39 && nextElement && !isSecondLevelMenu) {
 		nextElement.focus();
 	}
 
 	// Left Arrow on top level menu
-	if(keyCode === 37 && prevElement) {
+	if(keyCode === 37 && prevElement && !isSecondLevelMenu) {
 		prevElement.focus();
 	}
 
@@ -31,6 +38,21 @@ var followKey = function(e) {
 		subMenu.style.display = 'block';
 		var subMenuItems = subMenu.children;
 		subMenuItems[0].focus();
+	}
+
+	// Close Submenu
+	if(keyCode === 9 && isSecondLevelMenu) {
+		e.path[1].style.display = 'none';
+	}
+
+	// Top Arrow
+	if(keyCode === 38 && isSecondLevelMenu && prevElement) {
+		prevElement.focus();
+	}
+
+	// Down Arrow
+	if(keyCode === 40 && isSecondLevelMenu && nextElement) {
+		nextElement.focus();
 	}
 }
 
