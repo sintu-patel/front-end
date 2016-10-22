@@ -34,10 +34,19 @@ var followKey = function(e) {
 	}
 
 	// Open Submenu
-	if(keyCode === 13 && subMenu) {
+	if((keyCode === 13 || keyCode === 40 || keyCode === 32) && subMenu) {
+		e.preventDefault();
 		subMenu.style.display = 'block';
 		var subMenuItems = subMenu.children;
 		subMenuItems[0].focus();
+	}
+
+	// Open Submenu
+	if(keyCode === 38 && subMenu) {
+		e.preventDefault();
+		subMenu.style.display = 'block';
+		var subMenuItems = subMenu.children;
+		subMenuItems[subMenuItems.length - 1].focus();
 	}
 
 	// Close Submenu
@@ -53,6 +62,12 @@ var followKey = function(e) {
 	// Down Arrow
 	if(keyCode === 40 && isSecondLevelMenu && nextElement) {
 		nextElement.focus();
+	}
+
+	// Down Arrow
+	if(keyCode === 27 && isSecondLevelMenu) {
+		e.path[1].style.display = 'none';
+		e.path[2].focus();
 	}
 }
 
