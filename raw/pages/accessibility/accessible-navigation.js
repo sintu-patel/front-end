@@ -54,6 +54,18 @@ var followKey = function(e) {
 		e.path[1].style.display = 'none';
 	}
 
+	// Move to right top level
+	if(keyCode === 39 && isSecondLevelMenu && e.path[2].nextElementSibling) {
+		e.path[1].style.display = 'none';
+		e.path[2].nextElementSibling.focus();
+	}
+
+	// Move to left top level
+	if(keyCode === 37 && isSecondLevelMenu && e.path[2].previousElementSibling) {
+		e.path[1].style.display = 'none';
+		e.path[2].previousElementSibling.focus();
+	}
+
 	// Top Arrow
 	if(keyCode === 38 && isSecondLevelMenu && prevElement) {
 		prevElement.focus();
@@ -62,6 +74,17 @@ var followKey = function(e) {
 	// Down Arrow
 	if(keyCode === 40 && isSecondLevelMenu && nextElement) {
 		nextElement.focus();
+	}
+
+	// Sub menu item action
+	if(keyCode === 32 && isSecondLevelMenu) {
+		e.preventDefault();
+		var anchorTag = elChildren[0];
+		var isAnchorTag = anchorTag.tagName.toLowerCase() === 'a';
+
+		if(tagName === 'li' && elChildren.length === 1 && isAnchorTag) {
+			anchorTag.click();
+		}
 	}
 
 	// Down Arrow
