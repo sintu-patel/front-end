@@ -66,24 +66,40 @@
 		li {
 			display: inline-block;
 			position: relative;
-			padding: 10px 15px;
+
+			a {
+				display: block;
+				padding: 10px 15px;
+				background: #333;
+	  			color: #fff;
+			}
 
 			> ul {
 				display: none;
 				position: absolute;
 				left: 0;
 				top: 100%;
+				width: 146px;
 
 				li {
+					display: block;
+					margin-bottom: 1px;
+				}
+			}
+
+			&:hover {
+				> ul {
 					display: block;
 				}
 			}
 
 			&:hover,
 			&:focus {
-				a {
+				outline: none;
+				> a {
 					background: #369;
 	  				color: #fff;
+	  				text-decoration: underline;
 				}
 			}
 		}
