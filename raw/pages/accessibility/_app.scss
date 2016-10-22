@@ -79,11 +79,14 @@
 				}
 			}
 
-			&:hover,
-			&:focus {
-				a {
+			&:hover {
+				> a {
 					background: #369;
 	  				color: #fff;
+				}
+
+				> ul {
+					display: block;
 				}
 			}
 		}
