@@ -66,6 +66,13 @@ var followKey = function(e) {
 		e.path[2].previousElementSibling.focus();
 	}
 
+	// Move to left top level
+	if(keyCode === 9 && e.shiftKey && isSecondLevelMenu && e.path[2].previousElementSibling) {
+		e.preventDefault();
+		e.path[1].style.display = 'none';
+		e.path[2].previousElementSibling.focus();
+	}
+
 	// Top Arrow
 	if(keyCode === 38 && isSecondLevelMenu && prevElement) {
 		prevElement.focus();
