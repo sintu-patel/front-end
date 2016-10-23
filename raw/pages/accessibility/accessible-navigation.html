@@ -20,19 +20,19 @@
 						<div class="line-space"></div>
 						<nav id="top-level-menu" role="navigation" class="navigation" aria-label="Primary navigation">
 							<ul class="top-menu">
-								<li tabindex="0">
+								<li tabindex="0" aria-label="link, Google">
 									<a tabindex="-1" href="http://www.google.com">Google</a>
 								</li>
 
-								<li tabindex="0">
+								<li tabindex="0" aria-label="link, Yahoo">
 									<a tabindex="-1" href="http://www.yahoo.com">Yahoo</a>
 								</li>
 
-								<li tabindex="0">
+								<li tabindex="0" aria-label="link, MSN">
 									<a tabindex="-1" href="http://www.msn.com">MSN</a>
 								</li>
 
-								<li tabindex="0">
+								<li tabindex="0" aria-label="link, Times of India">
 									<a tabindex="-1" href="http://timesofindia.com">Times of India</a>
 								</li>
 							</ul>
@@ -44,24 +44,24 @@
 						<div class="line-space"></div>
 						<nav id="nav-with-menu" role="navigation" class="navigation" aria-label="Primary navigation with sub navigation">
 							<ul class="first-level-menu">
-								<li tabindex="0" aria-label="link">
+								<li tabindex="0" aria-label="link, Google">
 									<a tabindex="-1" href="http://www.google.com">Google</a>
 								</li>
 
-								<li tabindex="0" aria-label="sub menu">
-									<a tabindex="-1" href="http://www.yahoo.com">Yahoo</a>
+								<li tabindex="0" aria-label="sub menu" aria-haspopup="true">
+									<a tabindex="-1" href="http://www.yahoo.com">Yahoo <span class="down-menu-indicater">&#8595;</span></a>
 
-									<ul class="second-level-menu" role="menu" aria-hidden="true">
-										<li tabindex="0" aria-label="link">
+									<ul class="second-level-menu" role="menu" aria-hidden="true" aria-expanded="false">
+										<li tabindex="0" aria-label="link, Google">
 											<a tabindex="-1" href="http://www.google.com">Google</a>
 										</li>
-										<li tabindex="0" aria-label="link">
+										<li tabindex="0" aria-label="link, Yahoo">
 											<a tabindex="-1" href="http://www.yahoo.com">Yahoo</a>
 										</li>
-										<li tabindex="0" aria-label="link">
+										<li tabindex="0" aria-label="link, MSN">
 											<a tabindex="-1" href="http://www.msn.com">MSN</a>
 										</li>
-										<li tabindex="0" aria-label="link">
+										<li tabindex="0" aria-label="link, Times of India">
 											<a tabindex="-1" href="http://timesofindia.com">Times of India</a>
 										</li>
 									</ul>
@@ -77,15 +77,78 @@
 							</ul>
 						</nav>
 
+						<div class="line-space"></div>
+						<div class="line-space"></div>
+						<div class="line-space"></div>
+						<div class="line-space"></div>
+						<h2>Vertical Navigation without sub navigation</h2>
+						<div class="line-space"></div>
+						<nav id="vertical-navigation" role="navigation" class="vertical-navigation" aria-label="Primary navigation">
+							<ul class="top-menu">
+								<li tabindex="0" aria-label="link, Google">
+									<a tabindex="-1" href="http://www.google.com">Google</a>
+								</li>
+
+								<li tabindex="0" aria-label="link, Yahoo">
+									<a tabindex="-1" href="http://www.yahoo.com">Yahoo</a>
+								</li>
+
+								<li tabindex="0" aria-label="link, MSN">
+									<a tabindex="-1" href="http://www.msn.com">MSN</a>
+								</li>
+
+								<li tabindex="0" aria-label="link, Times of India">
+									<a tabindex="-1" href="http://timesofindia.com">Times of India</a>
+								</li>
+						</nav>
+
+						<div class="line-space"></div>
+						<div class="line-space"></div>
+						<h2>Vertical navigation with sub navigation</h2>
+						<div class="line-space"></div>
+						<nav id="vertical-navigation-with-menu" role="navigation" class="vertical-navigation" aria-label="Primary navigation with sub navigation">
+							<ul class="first-level-menu">
+								<li tabindex="0" aria-label="link, Google">
+									<a tabindex="-1" href="http://www.google.com">Google</a>
+								</li>
+
+								<li tabindex="0" aria-label="sub menu" aria-haspopup="true">
+									<a tabindex="-1" href="http://www.yahoo.com">Yahoo 
+									<span class="right-menu-indicater">&#8594;</span></a>
+
+									<ul class="second-level-menu" role="menu" aria-expanded="false" aria-hidden="true">
+										<li tabindex="0" aria-label="link, Google">
+											<a tabindex="-1" href="http://www.google.com">Google</a>
+										</li>
+										<li tabindex="0" aria-label="link, Yahoo">
+											<a tabindex="-1" href="http://www.yahoo.com">Yahoo</a>
+										</li>
+										<li tabindex="0" aria-label="link, MSN">
+											<a tabindex="-1" href="http://www.msn.com">MSN</a>
+										</li>
+										<li tabindex="0" aria-label="link, Times of India">
+											<a tabindex="-1" href="http://timesofindia.com">Times of India</a>
+										</li>
+									</ul>
+								</li>
+
+								<li tabindex="0" aria-label="link, MSN">
+									<a tabindex="-1" href="http://www.msn.com">MSN</a>
+								</li>
+
+								<li tabindex="0" aria-label="link, Times of India">
+									<a tabindex="-1" href="http://timesofindia.com">Times of India</a>
+								</li>
+							</ul>
+						</nav>
+
 					</div>
 					<article class="col-xs-6 article">
 						<h1>Tips</h1>
-						<p>Take extra care while using ordred list or unordered list</p>
+						<p>Use unordered list where the order of navigation items does not matter</p>
+						<p>Use ordered list where the order of navigation items does matter like ebook</p>
 						<h2>Identify the menu:</h2>
 						<p>Use role="navigation" or &lt;nav&gt; tag or both</p>
-						<h2>Labeling navigations:</h2>
-						<p>Using a (hidden) heading inside nav tag like &lt;h2&gt;Main menu&lt;/h2&gt;</p>
-						<p>Do not make hidden with display none or visibility hidden. Screen reader don't read hidden content. Hide with font size 0 or other techniques</p>
 						<h2>Labeling navigations:</h2>
 						<p>aria-label i.e aria-label="Main Menu"</p>
 						<p>&lt;nav role="navigation" aria-label="Main Menu"&gt;</p>
@@ -94,7 +157,7 @@
 						<h2>Indicating the current page</h2>
 						<p>&lt;span class="visuallyhidden"&gt;Current Page: &lt;/span&gt;</p>
 						<h2>If menu has sub menu, then it should indicate the menu visually ie. arrow down icon</h2>
-						<p>Sub menu should close after one second</p>
+						<p>Sub menu should close after one second: optional</p>
 						<p>If menu has submenu use aria-haspopup="true"</p>
 						<p>Use aria-expanded</p>
 						<h2>Keyboard</h2>
