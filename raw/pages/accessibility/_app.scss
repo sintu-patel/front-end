@@ -67,9 +67,16 @@
 			display: inline-block;
 			position: relative;
 
+			.down-menu-indicater {
+				position: absolute;
+				right: 5px;
+				top: 10px;
+				color: #fff;
+			}
+
 			a {
 				display: block;
-				padding: 10px 15px;
+				padding: 10px 25px;
 				background: #333;
 	  			color: #fff;
 			}
@@ -114,6 +121,13 @@
 		li {
 			margin-bottom: 1px;
 			position: relative;
+
+			.right-menu-indicater {
+				position: absolute;
+				right: 5px;
+				top: 10px;
+				color: #fff;
+			}
 
 			a {
 				display: block;
