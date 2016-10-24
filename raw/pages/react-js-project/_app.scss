@@ -50,7 +50,8 @@
 				padding: 10px 0;
 
 				&:hover,
-				&.current {
+				&.current,
+				&:focus {
 					color: $color-navy;
 					text-decoration: underline;
 				}
@@ -99,6 +100,7 @@
 			ul {
 				li {
 					&:hover,
+					&:focus,
 					&.current {
 						color: $color-white;
 						text-decoration: underline;

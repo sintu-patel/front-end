@@ -19,7 +19,8 @@
 				padding: 10px;
 				transition: 0.3s all;
 
-				&:hover {
+				&:hover,
+				&:focus {
 					background: #369;
 					color: $color-white;
 				}
