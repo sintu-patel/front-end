@@ -234,22 +234,13 @@ var followVerticalMenu = function(e) {
 		nextElement.focus();
 	}
 
-	// Move to top top level
-	if(keyCode === 39 && isSecondLevelMenu && e.path[2].nextElementSibling) {
-		e.preventDefault();
-		e.path[1].setAttribute('aria-hidden', 'true');
-		e.path[1].setAttribute('aria-expanded', 'false');
-		e.path[1].style.display = 'none';
-		e.path[2].nextElementSibling.focus();
-	}
-
 	// Move to bottom top level
 	if(keyCode === 37 && isSecondLevelMenu && e.path[2].previousElementSibling) {
 		e.preventDefault();
 		e.path[1].setAttribute('aria-hidden', 'true');
 		e.path[1].setAttribute('aria-expanded', 'false');
 		e.path[1].style.display = 'none';
-		e.path[2].previousElementSibling.focus();
+		e.path[2].focus();
 	}
 
 	// Sub menu item action
@@ -282,8 +273,3 @@ var verticalMenuWithSubmenu = document.getElementById('vertical-navigation-with-
 verticalMenuWithSubmenu.onkeydown = function(e) {
 	followVerticalMenu(e);
 }
-
-
-
-
-

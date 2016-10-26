@@ -15,10 +15,16 @@ class Nav extends React.Component {
 		var data = this.props.data;
 		var html = [];
 		for(var i = 0; i < data.length; i++ ) {
-			html.push(<li className={this.state.current === i ? 'current': ''} data-key={i} key={i} onClick={this.setContent.bind(this)}  >{data[i].title}</li>);
-		} 
+			html.push(<li tabIndex="0" className={this.state.current === i ? 'current': ''} data-key={i} key={i} onKeyDown={this.setContentWithEnter.bind(this)} onClick={this.setContent.bind(this)}  >{data[i].title}</li>);
+		}
 
 		return html;
+	}
+	setContentWithEnter(e) {
+		var keyCode = e.keyCode;
+		if(keyCode === 13) {
+			this.setContent(e);
+		}
 	}
 
 	setContent(e) {
@@ -29,7 +35,7 @@ class Nav extends React.Component {
 		});
 		var payloadData = {
 			pageNo: target
-		};	
+		};
 		Actions.updateData(payloadData);
 	}
 
