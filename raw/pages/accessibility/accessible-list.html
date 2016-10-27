@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	 <head>
+	    <meta charset="UTF-8" />
+	    <title>Accessible list: List with keyboard</title>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../../assets/css/app.css" />
+	</head>
+	  <body class="accessible-list page">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h1>Keyboard accessible list example</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<h2>Horizontal list example with keyboard operation</h2>
+						<ul class="horizontal-list" id="horizontal-list">
+							<li tabindex="0">List Item 1</li>
+							<li tabindex="0">List Item 2</li>
+							<li tabindex="0">List Item 3</li>
+							<li tabindex="0">List Item 4</li>
+							<li tabindex="0">List Item 5</li>
+						</ul>
+						<h2>Vertical list example with keyboard operation</h2>
+						<ul class="vertical-list" id="vertical-list">
+							<li tabindex="0">List Item 1</li>
+							<li tabindex="0">List Item 2</li>
+							<li tabindex="0">List Item 3</li>
+							<li tabindex="0">List Item 4</li>
+							<li tabindex="0">List Item 5</li>
+						</ul>
+					</div>
+					<div class="col-xs-6">
+						<h2>Horizontal tabbing on any list of elements in sequence</h2>
+						<div class="horizontal-element"  id="horizontal-element">
+							<div tabindex="0">Element 1</div>
+							<div tabindex="0">Element 2</div>
+							<div tabindex="0">Element 3</div>
+							<div tabindex="0">Element 4</div>
+							<div tabindex="0">Element 5</div>
+						</div>
+
+						<h2>Vertical tabbing on any list of elements in sequence</h2>
+						<div class="vertical-element"  id="vertical-element">
+							<div tabindex="0">Element 1</div>
+							<div tabindex="0">Element 2</div>
+							<div tabindex="0">Element 3</div>
+							<div tabindex="0">Element 4</div>
+							<div tabindex="0">Element 5</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript" src="accessible-list.js"></script>
+	  </body>
+</html>
