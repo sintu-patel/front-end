@@ -11,7 +11,7 @@
 		<header class="site-header">
 			<div class="container-fluid">
 				<div class="logo-icon">R&amp;D</div>
-				<a class="site-logo" href="http://sintupatel.in/">
+				<a tabindex="-1" class="site-logo" href="http://sintupatel.in/">
 					<span class="logo-name">www.sintupatel.in</span>
 				</a>
 			</div>
@@ -20,45 +20,36 @@
 			<div class="container-fluid">
 				<div class="row">
 					<nav class="col-xs-12 site-nav">
-						<ul>
-							<li>
-								<a href="pages/flexbox/flexbox.html" target="blank" >CSS3 Flexbox: A new layout mode in CSS3</a>
+						<ul id="page-list">
+							<li tabindex="0">
+								<a tabindex="-1" href="pages/flexbox/flexbox.html" target="blank" >CSS3 Flexbox: A new layout mode in CSS3</a>
 							</li>
-							<li>
-								<a href="pages/angularjs-2-js/" target="blank" >AngularJS 2.0</a>
+							<li tabindex="0">
+								<a tabindex="-1" href="pages/angularjs-2-js/" target="blank" >AngularJS 2.0</a>
 							</li>
-							<li>
-								<a href="pages/angularjs-2-ts/" target="blank" >AngularJS 2.0 Typescript version</a>
+							<li tabindex="0">
+								<a tabindex="-1" href="pages/angularjs-2-ts/dist/" target="blank" >AngularJS 2.0 Typescript version</a>
 							</li>
-							<li>
-								<a href="pages/react-js-project/app/dist/app.html" target="blank" >Reactjs without flux</a>
+							<li tabindex="0">
+								<a tabindex="-1" href="pages/react-js-project/app/dist/app.html" target="blank" >Reactjs without flux</a>
 							</li>
-							<li>
-								<a href="pages/react-js-with-flux/app/dist/app.html" target="blank" >Reactjs with flux</a>
+							<li tabindex="0">
+								<a tabindex="-1" href="pages/react-js-with-flux/app/dist/app.html" target="blank" >Reactjs with flux</a>
 							</li>
-							<li>
-								<a href="pages/react-js-with-redux/app/dist/app.html" target="blank" >Reactjs with redux</a>
+							<li tabindex="0">
+								<a tabindex="-1" href="pages/react-js-with-redux/app/dist/app.html" target="blank" >Reactjs with redux</a>
 							</li>
-							<li>
-								<a href="pages/flexbox/flexbox.html" target="blank" >HTML 5 Games</a>
+							<li tabindex="0">
+								<a tabindex="-1" href="pages/accessibility/accessible-navigation.html" target="blank" >Accessible Navigation</a>
 							</li>
-							<li>
-								<a href="pages/typescript/typescript.html" target="blank" >TypeScript</a>
+							<li tabindex="0">
+								<a tabindex="-1" href="pages/accessibility/accessible-list.html" target="blank" >Accessible list</a>
 							</li>
-							<li>
-								<a href="pages/es6/es6.html" target="blank" >ES6</a>
+							<li tabindex="0">
+								<a tabindex="-1" href="pages/html-5/app.html" target="blank" >Html 5</a>
 							</li>
-							<li>
-								<a href="pages/accessibility/accessibility.html" target="blank" >Accessibility</a>
-							</li>
-							<li>
-								<a href="pages/accessibility/accessible-navigation.html" target="blank" >Accessible Navigation</a>
-							</li>
-							<li>
-								<a href="java:script" target="blank" >Slider in reactjs</a>
-							</li>
-							<li>
-								<a href="https://github.com/sintu-patel/front-end" target="blank" >Github Repository</a>
+							<li tabindex="0">
+								<a tabindex="-1" href="https://github.com/sintu-patel/front-end" target="blank" >Github Repository</a>
 							</li>
 						</ul>
 					</nav>
@@ -71,5 +62,23 @@
 			<a href="http://sintupatel.in/raw/resources.html" >resources</a>
 			<a href="http://sintupatel.in/raw/todo.html" >To Do</a>
 		</footer>
+		<script type="text/javascript">
+			var pageList = document.getElementById('page-list');
+			pageList.onkeydown = function(e) {
+				if (e.keyCode === 39 && e.target.nextElementSibling) {
+					e.target.nextElementSibling.focus();
+					e.preventDefault();
+				}
+
+				if (e.keyCode === 37 && e.target.previousElementSibling) {
+					e.target.previousElementSibling.focus();
+					e.preventDefault();
+				}
+
+				if (e.keyCode === 13) {
+					e.target.children[0].click();
+				}
+			}
+		</script>
   </body>
 </html>

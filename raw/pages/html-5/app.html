@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Html 5</title>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../../assets/css/app.css" />
+</head>
+  <body class="html-5 page">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-xs-6">
+					<article>
+						<h1>Draw line</h1>
+						<p>Click and start draw line</p>
+						<div class="app-container">
+							<canvas
+								id="line-canvas"
+								width="400"
+								height="400"
+							</canvas>
+						</div>
+					</article>
+				</div>
+
+				<div class="col-xs-6 color-container">
+					<article>
+						<h1>Color guide</h1>
+						<div class="row color-row">
+								<div class="col-xs-2 color green">
+								</div>
+								<div class="col-xs-2 color green-light">
+								</div>
+						</div>
+					</article>
+
+					<article class="rect-container">
+						<h1>Draw rectangle</h1>
+						<p>Click and start draw rectangle</p>
+							<canvas
+								id="rect-canvas"
+								width="400"
+								height="290"
+							</canvas>
+					</article>
+				</div>
+
+			</div>
+		</div>
+  </body>
+
+	<script src="app.js" type="text/javascript" ></script>
+</html>
