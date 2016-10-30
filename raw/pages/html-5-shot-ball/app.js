@@ -32,7 +32,7 @@ var intervalID = window.setInterval(function(){
   leftPos = leftPos + 1;
   drawBall(leftPos, 60)
   if(leftPos >= 500) {
-    clearInterval(intervalID);
+    leftPos = 0;
   }
 }, 10);
 
@@ -45,7 +45,7 @@ var drawObject = function(y) {
 
 var startTarget = function() {
   var countObj = 0;
-  var yPos = 400;
+  var yPos = 360;
   var intervalOB = window.setInterval(function(){
     countObj = countObj + 1;
     yPos = yPos - countObj;
