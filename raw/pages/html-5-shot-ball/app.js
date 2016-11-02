@@ -144,12 +144,12 @@ var drawResetButton = function(y) {
 
 drawResetButton(460);
 
-var printScore = function(missCount) {
+var printScore = function() {
   ctx.fillStyle = '#FF8C00';
-  ctx.fillRect(700, 270, 220, 210);
+  ctx.fillRect(750, 270, 220, 210);
   var radius = 50;
   ctx.beginPath();
-  ctx.arc(810, 380, radius, 0, 2 * Math.PI, false);
+  ctx.arc(860, 380, radius, 0, 2 * Math.PI, false);
   ctx.fillStyle = 'black';
   ctx.fill();
   ctx.fillStyle = '#FF4400';
@@ -159,15 +159,15 @@ var printScore = function(missCount) {
   ctx.stroke();
   ctx.fillStyle = 'white';
   ctx.font="italic 20pt Calibri";
-  ctx.fillText('Total attempts', 730, 250, 200);
+  ctx.fillText('Total attempts', 780, 250, 200);
   ctx.font="italic 40pt Calibri";
   var text = missCount;
   if(text < 10) {
     text = '0' + text;
   }
-  ctx.fillText(text, 780, 395, 1000);
+  ctx.fillText(text, 830, 395, 1000);
 }
-printScore(0);
+printScore();
 drawButton(460);
 
 var buttonAction = function(e) {
@@ -205,7 +205,7 @@ var mouseMoveAction = function(e) {
 var keyAction = function (e) {
   if((e.keyCode === 13 || e.keyCode === 32)) {
     startTarget('start');
-    printScore(missCount);
+    printScore();
     missCount++;
   }
 
@@ -222,7 +222,7 @@ var resetGame = function() {
   missCount = 0;
   gameLevel = 1;
   drawBallSuccess(940, 100);
-  printScore(missCount);
+  printScore();
 }
 
 app.onclick = function(e) {
