@@ -1,12 +1,24 @@
 var $blue = '#8A2BE2';
 var app = document.getElementById('app');
 var ctx = app.getContext('2d');
-ctx.fillStyle = $blue;
-ctx.fillRect(0, 0, 1000, 500);
 var element = app.getBoundingClientRect();
 var canvasLeft = element.left;
 var canvasTop = element.top;
+var targetCr = {
+  x: 0,
+  y: 0
+};
+var count = 0;
+var leftPos = 0;
+var killed = false;
+var missCount = 0;
+var gameLevel = 1;
 
+// Draw board
+ctx.fillStyle = $blue;
+ctx.fillRect(0, 0, 1000, 500);
+// Focus on app
+app.focus();
 // Draw a circle
 var drawBall = function(x, y) {
   var radius = 50;
@@ -24,20 +36,13 @@ var clearRectObj = function (x, y, w, h) {
   ctx.fillRect(x, y, w, h);
 }
 
-var targetCr = {
-  x: 0,
-  y: 0
-};
-
-var count = 0;
-var leftPos = 0;
 var intervalID = window.setInterval(function(){
-  clearRectObj(leftPos - 110, 0, leftPos, 110);
-  leftPos = leftPos + 1;
-  drawBall(leftPos, 60)
+  clearRectObj(leftPos - 140, 0, leftPos, 130);
+  leftPos = leftPos + gameLevel;
+  drawBall(leftPos, 80)
   targetCr = {
     x: leftPos,
-    y: 110
+    y: 130
   };
   if(leftPos >= 500) {
     leftPos = 0;
@@ -52,9 +57,8 @@ var drawObject = function(y) {
 }
 
 // Draw a circle
-var killed = false;
 var drawBallSuccess = function(x, y) {
-  var radius = 60;
+  var radius = 30;
   ctx.beginPath();
   ctx.arc(x, y, radius, 0, 2 * Math.PI, false);
   ctx.fillStyle = 'red';
@@ -62,33 +66,47 @@ var drawBallSuccess = function(x, y) {
 
   ctx.fillStyle = 'white';
   ctx.font="italic 20pt Calibri";
-  ctx.fillText('Success', x - 40, y + 10, 200);
+  var gameLevelText = gameLevel;
+  if(gameLevelText < 10) {
+    gameLevelText = '0' + gameLevelText;
+  }
+  ctx.fillText(gameLevelText, x - 15, y + 10, 200);
+
+  ctx.fillStyle = 'white';
+  ctx.font="italic 20pt Calibri";
+  ctx.fillText('Level', x - 30, y - 40, 200);
 }
 
 var hitTarget = function(hit) {
+  var isXTrue = (hit.x < targetCr.x) && (targetCr.x - hit.x <= 50);
+  var isYTrue = (hit.y > targetCr.y) && (hit.y - targetCr.y <= 10);
 
-  if(((hit.x < targetCr.x) && (targetCr.x - hit.x <= 10)) && ((hit.y > targetCr.y) && (hit.y - targetCr.y) <= 20)) {
-    clearInterval(intervalID);
-    setTimeout(function() {
-      drawBallSuccess(hit.x, 60)
-    }, 100)
+  if(isXTrue && isYTrue) {
+    drawBallSuccess(940, 100);
     killed = true;
+    gameLevel = gameLevel + 1;
   }
 };
 
-var startTarget = function() {
+var startTarget = function(action) {
   var countObj = 0;
   var yPos = 350;
-  var intervalOB = window.setInterval(function(){
-    countObj = countObj + 1;
-    yPos = yPos - countObj;
-    clearRectObj(200, yPos + 10, 10, 65);
-    drawObject(yPos);
-    hitTarget({x: 200, y: yPos});
-    if(yPos <= 60) {
-      clearInterval(intervalOB);
-    }
-  }, 10);
+
+  if(action === 'stop') {
+    clearInterval(intervalOB);
+  }
+  if(action === 'start') {
+    var intervalOB = window.setInterval(function(){
+      countObj = countObj + 1;
+      yPos = yPos - countObj;
+      clearRectObj(200, yPos + 10, 10, 65);
+      drawObject(yPos);
+      hitTarget({x: 200, y: yPos});
+      if(yPos <= 80) {
+        clearInterval(intervalOB);
+      }
+    }, 10);
+  }
 }
 
 var drawButton = function(y) {
@@ -128,10 +146,10 @@ drawResetButton(460);
 
 var printScore = function(missCount) {
   ctx.fillStyle = '#FF8C00';
-  ctx.fillRect(700, 190, 220, 210);
+  ctx.fillRect(700, 270, 220, 210);
   var radius = 50;
   ctx.beginPath();
-  ctx.arc(810, 300, radius, 0, 2 * Math.PI, false);
+  ctx.arc(810, 380, radius, 0, 2 * Math.PI, false);
   ctx.fillStyle = 'black';
   ctx.fill();
   ctx.fillStyle = '#FF4400';
@@ -141,33 +159,33 @@ var printScore = function(missCount) {
   ctx.stroke();
   ctx.fillStyle = 'white';
   ctx.font="italic 20pt Calibri";
-  ctx.fillText('Total attempts', 730, 230, 200);
+  ctx.fillText('Total attempts', 730, 250, 200);
   ctx.font="italic 40pt Calibri";
   var text = missCount;
   if(text < 10) {
     text = '0' + text;
   }
-  ctx.fillText(text, 780, 315, 1000);
+  ctx.fillText(text, 780, 395, 1000);
 }
-
+printScore(0);
 drawButton(460);
-var missCount = 0;
-app.onclick = function(e) {
-  
+
+var buttonAction = function(e) {
   var x = e.clientX - canvasLeft;
   var y = e.clientY - canvasTop;
 
-  if(!killed && x > 180 && x < 240 && y > 440 && y < 480) {
-    startTarget();
+  if(x > 180 && x < 240 && y > 440 && y < 480) {
+    startTarget('start');
     printScore(missCount);
     missCount++;
   }
 
   else if(x > 400 && x < 440 && y > 440 && y < 480) {
-    location.reload();
+    resetGame();
   }
-};
-app.onmousemove = function(e) {
+}
+
+var mouseMoveAction = function(e) {
   var x = e.clientX - canvasLeft;
   var y = e.clientY - canvasTop;
 
@@ -182,4 +200,36 @@ app.onmousemove = function(e) {
   else {
     app.style.cursor = 'not-allowed';
   }
+}
+
+var keyAction = function (e) {
+  if((e.keyCode === 13 || e.keyCode === 32)) {
+    startTarget('start');
+    printScore(missCount);
+    missCount++;
+  }
+
+  if(e.keyCode === 27) {
+    resetGame();
+  }
+}
+
+drawBallSuccess(940, 100);
+var resetGame = function() {
+  count = 0;
+  leftPos = 0;
+  killed = false;
+  missCount = 0;
+  gameLevel = 1;
+  drawBallSuccess(940, 100);
+  printScore(missCount);
+}
+
+app.onclick = function(e) {
+  buttonAction(e);
 };
+app.onmousemove = function(e) {
+  mouseMoveAction(e);
+};
+
+app.addEventListener('keydown', keyAction, true);

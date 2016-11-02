@@ -1,3 +1,20 @@
 .html-5-shot-ball {
-  background: $color-white;
+  background: $color-black;
+
+  canvas:focus {
+  	outline: none;
+  	box-shadow: 0 0 10px #8A2BE2;
+  }
+
+  .info {
+  	margin-top: 15px;
+
+  	p {
+  		font-size: 18px;
+  		color: #FF8C00;
+  		margin-top: 10px;
+  		font-weight: bold;
+      text-shadow: 1px 0 1px rgba($color-white, 0.5);
+  	}
+  }
 }
