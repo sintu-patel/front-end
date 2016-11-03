@@ -85,8 +85,21 @@ var hitTarget = function(hit) {
     drawBallSuccess(940, 100);
     killed = true;
     gameLevel = gameLevel + 1;
+    drawHit();
   }
 };
+
+var drawHit = function() {
+  var x = 500;
+  var y = 300;
+
+  ctx.font='italic 50pt Calibri';
+  ctx.fillText('HIT', x, y, 800);
+
+  var animateTimer = setTimeout(function(){
+    clearRectObj(x, y-50, 100, 100);
+  }, 500)
+}
 
 var startTarget = function(action) {
   var countObj = 0;
