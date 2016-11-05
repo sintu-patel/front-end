@@ -6,8 +6,18 @@
   	box-shadow: 0 0 10px #8A2BE2;
   }
 
+  canvas {
+    display: block;
+    margin: 0 auto;
+  }
+
   .info {
   	margin-top: 15px;
+
+    div {
+      width: 970px;
+      margin: 0 auto;
+    }
 
   	p {
   		font-size: 18px;
