@@ -16,7 +16,7 @@ var gameLevel = 1;
 
 // Draw board
 ctx.fillStyle = $blue;
-ctx.fillRect(0, 0, 1000, 500);
+ctx.fillRect(0, 0, 970, 500);
 // Focus on app
 app.focus();
 // Draw a circle
@@ -82,9 +82,9 @@ var hitTarget = function(hit) {
   var isYTrue = (hit.y > targetCr.y) && (hit.y - targetCr.y <= 10);
 
   if(isXTrue && isYTrue) {
-    drawBallSuccess(940, 100);
-    killed = true;
     gameLevel = gameLevel + 1;
+    drawBallSuccess(930, 100);
+    killed = true;
     drawHit();
   }
 };
@@ -159,10 +159,10 @@ drawResetButton(460);
 
 var printScore = function() {
   ctx.fillStyle = '#FF8C00';
-  ctx.fillRect(750, 270, 220, 210);
+  ctx.fillRect(740, 270, 220, 210);
   var radius = 50;
   ctx.beginPath();
-  ctx.arc(860, 380, radius, 0, 2 * Math.PI, false);
+  ctx.arc(850, 380, radius, 0, 2 * Math.PI, false);
   ctx.fillStyle = 'black';
   ctx.fill();
   ctx.fillStyle = '#FF4400';
@@ -172,13 +172,13 @@ var printScore = function() {
   ctx.stroke();
   ctx.fillStyle = 'white';
   ctx.font="italic 20pt Calibri";
-  ctx.fillText('Total attempts', 780, 250, 200);
+  ctx.fillText('Total attempts', 770, 250, 200);
   ctx.font="italic 40pt Calibri";
   var text = missCount;
   if(text < 10) {
     text = '0' + text;
   }
-  ctx.fillText(text, 830, 395, 1000);
+  ctx.fillText(text, 820, 395, 1000);
 }
 printScore();
 drawButton(460);
@@ -227,20 +227,29 @@ var keyAction = function (e) {
   }
 }
 
-drawBallSuccess(940, 100);
+drawBallSuccess(930, 100);
 var resetGame = function() {
   count = 0;
   leftPos = 0;
   killed = false;
   missCount = 0;
   gameLevel = 1;
-  drawBallSuccess(940, 100);
+  drawBallSuccess(930, 100);
   printScore();
 }
 
-app.onclick = function(e) {
-  buttonAction(e);
-};
+var isTouch = window.touchstart;
+if(isTouch) {
+  app.ontouchstart = function(e) {
+    buttonAction(e);
+  };
+}
+
+if(!isTouch) {
+  app.onclick = function(e) {
+    buttonAction(e);
+  };
+}
 app.onmousemove = function(e) {
   mouseMoveAction(e);
 };
