@@ -32,6 +32,35 @@ class app {
     this.$context.fillRect(0, 0, this.appWidth, this.appHeight);
 
     this.printCircleAnimation();
+    this.printTriangle();
+    this.printShape();
+    this.print3dShape();
+    this.print3dShapeRect();
+    this.print3dShapeRect2();
+  }
+
+  print3dShape() {
+    this.$context.fillStyle = 'green';
+    this.$context.globalAlpha = 0.2;
+    for(var i = 0; i < 10; i++) {
+        this.$context.fillRect(this.appWidth / 2 + i*10, 100, 100, 200);
+    }
+  }
+
+  print3dShapeRect() {
+    this.$context.fillStyle = 'blue';
+    this.$context.globalAlpha = 0.3;
+    for(var i = 0; i < 10; i++) {
+        this.$context.fillRect(this.appWidth / 2 + 200 + i*2, 100 + i*2, 100, 100);
+    }
+  }
+
+  print3dShapeRect2() {
+    this.$context.fillStyle = 'green';
+    this.$context.globalAlpha = 0.3;
+    for(var i = 0; i < 10; i++) {
+        this.$context.fillRect(this.appWidth / 2 + 340 + i*5, 100 + i*5, 100, 100);
+    }
   }
 
   printCircleAnimation() {
@@ -39,23 +68,61 @@ class app {
     var ct = 0;
     var $this = this;
     var circleCounter = 1;
-    var x1 = [1, 2, 3, 4];
-    var y1 = [1, 1, 1, 1];
-    var x2 = [4, 1, 2, 3];
-    var y2 = [1, 1, 1, 1];
+    var x1 = [1, 2, 3, 4, 5, 6, 7, 8];
+    var y1 = [1, 1, 1, 1, 1, 1, 1, 1];
+    var x2 = [8, 1, 2, 3, 4, 5, 6, 7];
+    var y2 = [1, 1, 1, 1, 1, 1, 1, 1];
     var circleAnimate = window.setInterval(function(){
-        $this.printCircle(x2[circleCounter] * 100, y2[circleCounter] * 100, 50, $this.colorDarkOrange);
-        $this.printCircle(x1[circleCounter] * 100, y1[circleCounter] * 100, 50, '#FF0800');
+        $this.printCircle(x2[circleCounter] * 60, y2[circleCounter] * 60, 30, $this.colorDarkOrange, 0.5);
+        $this.printCircle(x1[circleCounter] * 60, y1[circleCounter] * 60, 30, 'orange', 0.5);
         circleCounter++;
-        if(circleCounter === 4) {
+        if(circleCounter === 8) {
             circleCounter = 0;
         }
     }, 100);
   }
 
-  printCircle(x1, y1, r1, cl) {
+  printTriangle() {
+    var counter = 0;
+    var ct = 0;
+    var $this = this;
+    var circleCounter = 1;
+    var x1 = [1, 2, 3, 2.5, 2, 1.5];
+    var y1 = [5, 5, 5, 4,   3, 4];
+    var x2 = [1.5, 1, 2, 3, 2.5, 2];
+    var y2 = [4, 5, 5, 5, 4,   3];
+    var circleAnimate = window.setInterval(function(){
+        $this.printCircle(x2[circleCounter] * 60, y2[circleCounter] * 60, 30, $this.colorDarkOrange, 0.5);
+        $this.printCircle(x1[circleCounter] * 60, y1[circleCounter] * 60, 30, 'yellow', 0.5);
+        circleCounter++;
+        if(circleCounter === 6) {
+            circleCounter = 0;
+        }
+    }, 100);
+  }
+
+  printShape() {
+    var counter = 0;
+    var ct = 0;
+    var $this = this;
+    var circleCounter = 1;
+    var x1 = [5, 6, 7, 8, 9, 10];
+    var y1 = [4, 5, 6, 7, 8, 9];
+    var x2 = [10, 5, 6, 7, 8, 9];
+    var y2 = [9, 4, 5, 6, 7, 8];
+    var circleAnimate = window.setInterval(function(){
+        $this.printCircle(x2[circleCounter] * 50, y2[circleCounter] * 50, 80, $this.colorDarkOrange, 1);
+        $this.printCircle(x1[circleCounter] * 50, y1[circleCounter] * 50, 80, 'green', 1);
+        circleCounter++;
+        if(circleCounter === 6) {
+            circleCounter = 0;
+        }
+    }, 100);
+  }
+
+  printCircle(x1, y1, r1, cl, op) {
     this.$context.fillStyle = cl;
-    this.$context.globalAlpha = 0.5;
+    this.$context.globalAlpha = op;
     this.$context.beginPath();
     this.$context.arc(x1, y1, r1, 0, 2 * Math.PI, false);
     this.$context.fill();
