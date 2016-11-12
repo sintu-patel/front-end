@@ -33,20 +33,29 @@ class app {
     this.$context.fillRect(0, 0, this.appWidth, this.appHeight);
 
     // Print Over screen
-    this.print3dShape();
+    this.print3dShape(100, 100);
   }
 
-  print3dShape() {
-    var c1 = {x: 200, y: 300};
-    var c2 = {x: 400, y: 300};
-    var c3 = {x: 400, y: 400};
-    var c4 = {x: 200, y: 400};
+  print3dShape(a, b) {
+    var c1 = {x: a,       y: b};
+    var c2 = {x: a + 200, y: b};
+    var c3 = {x: a + 200, y: b + 100};
+    var c4 = {x: a,       y: b + 100};
+    var c5 = {x: a + 50,  y: b - 50};
+    var c6 = {x: a + 250, y: b - 50};
+    var c7 = {x: a + 250, y: b + 50};
+
     var c = [c1, c2, c3, c4];
     var l1 = [c1, c2];
     var l2 = [c2, c3];
     var l3 = [c3, c4];
     var l4 = [c4, c1];
-    var l = [l1, l2, l3, l4];
+    var l5 = [c1, c5];
+    var l6 = [c2, c6];
+    var l7 = [c5, c6];
+    var l8 = [c6, c7];
+    var l9 = [c7, c3];
+    var l = [l1, l2, l3, l4, l5, l6, l7, l8, l9];
     var i;
     for(i = 0; i < l.length; i++) {
         this.printLine(l[i][0].x, l[i][0].y, l[i][1].x, l[i][1].y);
