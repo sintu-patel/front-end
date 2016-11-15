@@ -23,7 +23,7 @@ class app {
         emailArray.push({key: 'Contains only allowed characters', value: ACP});
 
          // Not allowed substring 
-        var notAllowedPattern = "-@|_@|@_|@-|--|__|-_|_-|@@|\\.@|@\\.|\\._|\\.-|-\\.|_\\.";
+        var notAllowedPattern = "-@|_@|@_|@-|--|__|-_|_-|@@|\\.@|@\\.|\\._|\\.-|-\\.|_\\.|\\.\\.";
         var notAllowedPatternRegex = new RegExp(notAllowedPattern);
         var isNotAllowedString = notAllowedPatternRegex.test(email);
         emailArray.push({key: 'Not allowed string', value: isNotAllowedString});
