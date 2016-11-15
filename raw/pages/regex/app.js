@@ -4,7 +4,7 @@ class app {
     }
 
     emailValidation() {
-        var email = '1a-b.c_9A@a';
+        var email = '1.a-b.c_9.A@a';
 
         // Validate first and last characters
         var regexPattern = '^[a-zA-Z0-9].*[a-zA-Z]$';
@@ -23,7 +23,7 @@ class app {
         emailArray.push({key: 'Contains only allowed characters', value: ACP});
 
          // Not allowed substring 
-        var notAllowedPattern = "@_|@-|--|__|-_|_-|@@";
+        var notAllowedPattern = "-@|_@|@_|@-|--|__|-_|_-|@@|\\.@|@\\.";
         var notAllowedPatternRegex = new RegExp(notAllowedPattern);
         var isNotAllowedString = notAllowedPatternRegex.test(email);
         emailArray.push({key: 'Not allowed string', value: isNotAllowedString});
