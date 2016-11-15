@@ -4,19 +4,47 @@ class app {
     }
 
     emailValidation() {
-        var email = '1abc9Aa';
+        var email = '1a-b.c_9A@a';
+
+        // Validate first and last characters
         var regexPattern = '^[a-zA-Z0-9].*[a-zA-Z]$';
         var emailRegexObj = new RegExp(regexPattern);
-        var result;
-        if(emailRegexObj.test(email)) {
-            result = 'yes';
-        }
+        var FL = emailRegexObj.test(email);
 
-        else {
-            result = 'no';
-        }
+        var emailArray = [{
+            key: 'Valid first and last characters',
+            value: FL
+        }];
 
-        document.getElementById('email').innerHTML = result;
+        // allow only specific characters
+        var allowedCharsPattern = "^[0-9A-Za-z_@.-]+$";
+        var allowedCharsRegex = new RegExp(allowedCharsPattern);
+        var ACP = allowedCharsRegex.test(email);
+        emailArray.push({key: 'Contains only allowed characters', value: ACP});
+
+         // Not allowed substring 
+        var notAllowedPattern = "@_|@-|--|__|-_|_-|@@";
+        var notAllowedPatternRegex = new RegExp(notAllowedPattern);
+        var isNotAllowedString = notAllowedPatternRegex.test(email);
+        emailArray.push({key: 'Not allowed string', value: isNotAllowedString});
+
+
+
+        // Output
+        var html = '<table>';
+        var i;
+        for(i=0; i < emailArray.length; i++) {
+            html += '<tr>';
+            html += '<td>';
+            html += emailArray[i].key
+            html += '</td>';
+            html += '<td>';
+            html += emailArray[i].value
+            html += '</td>';
+            html += '</tr>';
+        }
+        html += '</table>';
+        document.getElementById('email').innerHTML = html;
     }
 }
 
