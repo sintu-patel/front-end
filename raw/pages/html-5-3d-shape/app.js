@@ -35,6 +35,73 @@ class app {
         // Print Over screen
         this.print3dShape(100, 100);
         this.printHome(400, 100);
+        this.printBall(200, 400, 50);
+
+        this.print3dBall(700, 400, 50);
+
+        this.$context.transform(1, -0.1, 0, 1, 0, 0);
+        this.print3dBall(700, 400, 50);
+
+        this.$context.transform(1, 0.2, 0.2, 1, 0, 0);
+        this.print3dBall(700, 400, 50);
+
+        this.$context.transform(1, -0.1, 0, 1, 0, 0);
+        this.print3dBall(700, 400, 50);
+        this.$context.transform(1, 0, -0.2, 1, 0, 0);
+        this.printLines();
+
+    }
+
+    printLines() {
+        var $this = this;
+        this.$context.globalAlpha = 0.1;
+
+        $this.$context.strokeStyle = $this.colorDarkOrange;
+        $this.$context.lineWidth = 1;
+
+        var i = 0;
+        for(i = 0; i < 100; i++) {
+            $this.$context.moveTo(1000+i, 200+i);
+            $this.$context.lineTo(1000+i, 300+i)
+            $this.$context.stroke();
+
+            $this.$context.moveTo(1000-i, 200+i);
+            $this.$context.lineTo(1000-i, 300+i);
+            $this.$context.stroke();
+        }
+    }
+
+    print3dBall(x, y, r) {
+        this.$context.globalAlpha = 0.8;
+        this.$context.beginPath();
+        this.$context.arc(x, y, r, 0*Math.PI, 2*Math.PI);
+        var grd = this.$context.createLinearGradient(x-50, y-50, x+50, y+50);
+        grd.addColorStop(0.1, '#FF0000');
+        grd.addColorStop(0.2, "#FF5A00");
+        grd.addColorStop(0.3, '#FF9A00');
+        grd.addColorStop(0.4, "#FFCE00");
+        grd.addColorStop(0.5, '#F0FF00');
+        grd.addColorStop(1, "#000");
+        this.$context.fillStyle = grd;
+        this.$context.fill();
+        this.$context.lineWidth = 10;
+        this.$context.stroke();
+    }
+
+    printBall(x, y, r) {
+        this.$context.beginPath();
+        this.$context.arc(x, y, r, 0*Math.PI, 2*Math.PI);
+        this.$context.fillStyle = this.colorYellow;
+        this.$context.fill();
+        this.$context.beginPath();
+        this.$context.arc(x+r*2, y, r, 0*Math.PI, 2*Math.PI);
+        this.$context.fillStyle = '#FF4400';
+        this.$context.fill();
+
+        this.$context.beginPath();
+        this.$context.arc(x+r*4, y, r, 0*Math.PI, 2*Math.PI);
+        this.$context.fillStyle = '#8A2BE2';
+        this.$context.fill();
     }
 
     print3dShape(a, b) {
@@ -79,7 +146,7 @@ class app {
         this.$context.restore();
         this.$context.transform(1,-2,0,1,-24,1300);
         this.printRect(c6.x - 25, c5.y, 25, 100, '#8A2BE2');
-        this.$context.restore();
+        this.$context.transform(1,2,0,1,24,-1300);
     }
 
     printRect(x, y, w, h, color) {
