@@ -1,15 +1,15 @@
 var followKey = function(e) {
 	var keyCode = e.keyCode;
-	var el = e.srcElement;
+	var el = e.target;
 	var tagName = el.tagName.toLowerCase();
 	var prevElement = e.target.previousElementSibling;
 	var nextElement = e.target.nextElementSibling;
 	var elChildren = el.children;
 	var subMenu = elChildren[1];
 	var isTopLevelMenuItem = e;
-	var parentEl = e.path[1];
-	var parentLevel2 = e.path[2];
-	var parentLevel3 = e.path[3];
+	var parentEl = e.target.parentElement;
+	var parentLevel2 = e.target.parentElement.parentElement;
+	var parentLevel3 = e.target.parentElement.parentElement.parentElement;
 	var parentLevel3Class = parentLevel3.getAttribute('class');
 	var classMatch = new RegExp('first-level-menu');
 	var isSecondLevelMenu = classMatch.test(parentLevel3Class);
@@ -58,45 +58,45 @@ var followKey = function(e) {
 	// Close Submenu
 	if(keyCode === 9 && isSecondLevelMenu) {
 		e.preventDefault();
-		e.path[1].setAttribute('aria-hidden', 'true');
-		e.path[1].setAttribute('aria-expanded', 'false');
-		e.path[1].style.display = 'none';
+		e.target.parentElement.setAttribute('aria-hidden', 'true');
+		e.target.parentElement.setAttribute('aria-expanded', 'false');
+		e.target.parentElement.style.display = 'none';
 	}
 
 	// Move to right top level
-	if(keyCode === 39 && isSecondLevelMenu && e.path[2].nextElementSibling) {
+	if(keyCode === 39 && isSecondLevelMenu && e.target.parentElement.parentElement.nextElementSibling) {
 		e.preventDefault();
-		e.path[1].setAttribute('aria-hidden', 'true');
-		e.path[1].setAttribute('aria-expanded', 'false');
-		e.path[1].style.display = 'none';
-		e.path[2].nextElementSibling.focus();
+		e.target.parentElement.setAttribute('aria-hidden', 'true');
+		e.target.parentElement.setAttribute('aria-expanded', 'false');
+		e.target.parentElement.style.display = 'none';
+		e.target.parentElement.parentElement.nextElementSibling.focus();
 	}
 
 	// Move to left top level
-	if(keyCode === 37 && isSecondLevelMenu && e.path[2].previousElementSibling) {
+	if(keyCode === 37 && isSecondLevelMenu && e.target.parentElement.parentElement.previousElementSibling) {
 		e.preventDefault();
-		e.path[1].setAttribute('aria-hidden', 'true');
-		e.path[1].setAttribute('aria-expanded', 'false');
-		e.path[1].style.display = 'none';
-		e.path[2].previousElementSibling.focus();
+		e.target.parentElement.setAttribute('aria-hidden', 'true');
+		e.target.parentElement.setAttribute('aria-expanded', 'false');
+		e.target.parentElement.style.display = 'none';
+		e.target.parentElement.parentElement.previousElementSibling.focus();
 	}
 
 	// Move to left top level
-	if(keyCode === 9 && e.shiftKey && isSecondLevelMenu && e.path[2].previousElementSibling) {
+	if(keyCode === 9 && e.shiftKey && isSecondLevelMenu && e.target.parentElement.parentElement.previousElementSibling) {
 		e.preventDefault();
-		e.path[1].setAttribute('aria-hidden', 'true');
-		e.path[1].setAttribute('aria-expanded', 'false');
-		e.path[1].style.display = 'none';
-		e.path[2].previousElementSibling.focus();
+		e.target.parentElement.setAttribute('aria-hidden', 'true');
+		e.target.parentElement.setAttribute('aria-expanded', 'false');
+		e.target.parentElement.style.display = 'none';
+		e.target.parentElement.parentElement.previousElementSibling.focus();
 	}
 
 	// Move to left top level
-	if(keyCode === 9 && !e.shiftKey && isSecondLevelMenu && e.path[2].nextElementSibling) {
+	if(keyCode === 9 && !e.shiftKey && isSecondLevelMenu && e.target.parentElement.parentElement.nextElementSibling) {
 		e.preventDefault();
-		e.path[1].setAttribute('aria-hidden', 'true');
-		e.path[1].setAttribute('aria-expanded', 'false');
-		e.path[1].style.display = 'none';
-		e.path[2].nextElementSibling.focus();
+		e.target.parentElement.setAttribute('aria-hidden', 'true');
+		e.target.parentElement.setAttribute('aria-expanded', 'false');
+		e.target.parentElement.style.display = 'none';
+		e.target.parentElement.parentElement.nextElementSibling.focus();
 	}
 
 	// Top Arrow
@@ -125,10 +125,10 @@ var followKey = function(e) {
 	// Down Arrow
 	if(keyCode === 27 && isSecondLevelMenu) {
 		e.preventDefault();
-		e.path[1].setAttribute('aria-hidden', 'true');
-		e.path[1].setAttribute('aria-expanded', 'false');
-		e.path[1].style.display = 'none';
-		e.path[2].focus();
+		e.target.parentElement.setAttribute('aria-hidden', 'true');
+		e.target.parentElement.setAttribute('aria-expanded', 'false');
+		e.target.parentElement.style.display = 'none';
+		e.target.parentElement.parentElement.focus();
 	}
 }
 
@@ -148,16 +148,16 @@ navWithMenu.onkeydown = function(e) {
 
 var followVerticalMenu = function(e) {
 	var keyCode = e.keyCode;
-	var el = e.srcElement;
+	var el = e.target;
 	var tagName = el.tagName.toLowerCase();
 	var prevElement = e.target.previousElementSibling;
 	var nextElement = e.target.nextElementSibling;
 	var elChildren = el.children;
 	var subMenu = elChildren[1];
 	var isTopLevelMenuItem = e;
-	var parentEl = e.path[1];
-	var parentLevel2 = e.path[2];
-	var parentLevel3 = e.path[3];
+	var parentEl = e.target.parentElement;
+	var parentLevel2 = e.target.parentElement.parentElement;
+	var parentLevel3 = e.target.parentElement.parentElement.parentElement;
 	var parentLevel3Class = parentLevel3.getAttribute('class');
 	var classMatch = new RegExp('first-level-menu');
 	var isSecondLevelMenu = classMatch.test(parentLevel3Class);
@@ -207,19 +207,19 @@ var followVerticalMenu = function(e) {
 	// Close Submenu
 	if(keyCode === 9 && isSecondLevelMenu) {
 		e.preventDefault();
-		e.path[1].setAttribute('aria-hidden', 'true');
-		e.path[1].setAttribute('aria-expanded', 'false');
-		e.path[1].style.display = 'none';
-		e.path[2].nextElementSibling.focus();
+		e.target.parentElement.setAttribute('aria-hidden', 'true');
+		e.target.parentElement.setAttribute('aria-expanded', 'false');
+		e.target.parentElement.style.display = 'none';
+		e.target.parentElement.parentElement.nextElementSibling.focus();
 	}
 
 	// Move to left top level
-	if(keyCode === 9 && e.shiftKey && isSecondLevelMenu && e.path[2].previousElementSibling) {
+	if(keyCode === 9 && e.shiftKey && isSecondLevelMenu && e.target.parentElement.parentElement.previousElementSibling) {
 		e.preventDefault();
-		e.path[1].setAttribute('aria-hidden', 'true');
-		e.path[1].setAttribute('aria-expanded', 'false');
-		e.path[1].style.display = 'none';
-		e.path[2].previousElementSibling.focus();
+		e.target.parentElement.setAttribute('aria-hidden', 'true');
+		e.target.parentElement.setAttribute('aria-expanded', 'false');
+		e.target.parentElement.style.display = 'none';
+		e.target.parentElement.parentElement.previousElementSibling.focus();
 	}
 
 	// Top Arrow
@@ -235,12 +235,12 @@ var followVerticalMenu = function(e) {
 	}
 
 	// Move to bottom top level
-	if(keyCode === 37 && isSecondLevelMenu && e.path[2].previousElementSibling) {
+	if(keyCode === 37 && isSecondLevelMenu && e.target.parentElement.parentElement.previousElementSibling) {
 		e.preventDefault();
-		e.path[1].setAttribute('aria-hidden', 'true');
-		e.path[1].setAttribute('aria-expanded', 'false');
-		e.path[1].style.display = 'none';
-		e.path[2].focus();
+		e.target.parentElement.setAttribute('aria-hidden', 'true');
+		e.target.parentElement.setAttribute('aria-expanded', 'false');
+		e.target.parentElement.style.display = 'none';
+		e.target.parentElement.parentElement.focus();
 	}
 
 	// Sub menu item action
@@ -257,10 +257,10 @@ var followVerticalMenu = function(e) {
 	// Down Arrow
 	if(keyCode === 27 && isSecondLevelMenu) {
 		e.preventDefault();
-		e.path[1].setAttribute('aria-hidden', 'true');
-		e.path[1].setAttribute('aria-expanded', 'false');
-		e.path[1].style.display = 'none';
-		e.path[2].focus();
+		e.target.parentElement.setAttribute('aria-hidden', 'true');
+		e.target.parentElement.setAttribute('aria-expanded', 'false');
+		e.target.parentElement.style.display = 'none';
+		e.target.parentElement.parentElement.focus();
 	}
 };
 
