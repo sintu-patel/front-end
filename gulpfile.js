@@ -4,7 +4,7 @@ var compass = require('gulp-compass');
 
 gulp.task('compileAppSASS', function() {
 	gulp.src('raw/sass/app.scss')
-		.pipe(compass({
+		.pipe(sass({
 			css: 'assets/css/',
 			sass: 'raw/sass/'
 		}))
