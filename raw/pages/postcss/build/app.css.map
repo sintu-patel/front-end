@@ -1,1 +1,1 @@
-{"version":3,"sources":["app.css"],"names":[],"mappings":"AAAA;CACC,gBAAgB;CAChB","file":"app.css","sourcesContent":["body {\n\tbackground: red;\n}"]}
+{"version":3,"sources":["app.css"],"names":[],"mappings":"AAAA;EACE,gBAAgB;CACjB","file":"app.css","sourcesContent":["div {\n  lost-column: 1/3 \n}"]}
